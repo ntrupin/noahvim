@@ -1,0 +1,3 @@
+# Noahvim
+
+My Neovim configuration.
