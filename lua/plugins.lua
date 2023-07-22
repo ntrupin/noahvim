@@ -9,14 +9,15 @@ local plugins = {
   -- appearance
   { 
     "sainnhe/sonokai", -- colorscheme
-    config = function()
-      vim.cmd("colorscheme sonokai")
-    end
+    config = require("configs.sonokai").config
   },
   { "nvim-tree/nvim-web-devicons" },
 
   -- better syntax highlighting
-  { "nvim-treesitter/nvim-treesitter" },
+  { 
+    "nvim-treesitter/nvim-treesitter",
+    config = require("configs.treesitter").config
+  },
 
   -- telescope fuzzy finder and associated utils
   {
