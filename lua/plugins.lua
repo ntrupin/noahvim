@@ -1,5 +1,8 @@
 -- plugins
 local plugins = {
+  -- dependencies
+  { "nvim-lua/plenary.nvim" },
+
   -- appearance
   { 
     "sainnhe/sonokai", -- colorscheme
@@ -7,8 +10,6 @@ local plugins = {
       vim.cmd("colorscheme sonokai")
     end
   },
-
-  -- misc dependencies
 
   -- better syntax highlighting
   { "nvim-treesitter/nvim-treesitter" }
