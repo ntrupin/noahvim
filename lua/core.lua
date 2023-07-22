@@ -27,7 +27,6 @@ do
     splitright = false,
     splitbelow = true,
     -- appearance
-    termguicolors = true,
     mouse = "a",
     list = true,
     listchars = {
@@ -38,7 +37,7 @@ do
     -- folding
     foldmethod = "expr",
     foldlevel = 1,
-    foldenable = false
+    foldenable = false,
     foldexpr = "nvim_treesitter#foldexpr()"
   }
 
@@ -55,11 +54,24 @@ do
     shiftwidth = 4,
     -- spellcheck
     spelllang = "en",
-    spellsuggest = "best,8"
+    spellsuggest = "best,8",
     spell = false,
   }
 
   set_opts(opinionated)
+end
+
+-- set non-maocs options
+do
+  non_macos = {
+    termguicolors = true
+  }
+
+  -- check for full color support
+  local tco = tonumber(vim.o.t_Co or "0")
+  if tco > 256 then
+    set_opts(non_macos)
+  end
 end
 
 -- set filetype-specific options
