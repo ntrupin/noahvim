@@ -6,7 +6,7 @@ local function set_opts(opts)
   for k, v in pairs(opts) do
     vim.opt[k] = v
   end
-end 
+end
 
 -- set "unopinionated" options
 do
@@ -59,6 +59,12 @@ do
     spelllang = "en",
     spellsuggest = "best,8",
     spell = false,
+    -- window
+    number = true,
+    relativenumber = true,
+    numberwidth = 3,
+    cursorline = true,
+    cursorcolumn = true
   }
 
   set_opts(opinionated)
@@ -66,7 +72,7 @@ end
 
 -- set non-maocs options
 do
-  non_macos = {
+  local non_macos = {
     termguicolors = true
   }
 
@@ -105,3 +111,4 @@ do
     end
   })
 end
+
