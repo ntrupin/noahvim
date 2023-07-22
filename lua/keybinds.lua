@@ -9,7 +9,7 @@ vim.g.mapleader = ","
 local keybinds = {}
 
 -- set keybinds
-for k, v in pairs(keybinds) do
+for _, v in pairs(keybinds) do
   local opts = {
     noremap = true,
     silent = true
