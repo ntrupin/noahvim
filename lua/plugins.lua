@@ -28,7 +28,30 @@ local plugins = {
   { 
     "kyazdani42/nvim-tree.lua",
     config = require("configs.tree").config
-  }
+  },
+
+  -- lsp
+  { "neovim/nvim-lspconfig" },
+  { 
+    "williamboman/mason.nvim", -- lsp manager
+    build = ":MasonUpdate",
+    config = require("configs.mason").config
+  },
+  { 
+    "williamboman/mason-lspconfig.nvim",
+    config = require("configs.masonlsp").config
+  },
+  { "hrsh7th/cmp-nvim-lsp" },
+  { "hrsh7th/cmp-buffer" },
+  { "hrsh7th/cmp-path" },
+  { "hrsh7th/cmp-cmdline" },
+  { 
+    "hrsh7th/nvim-cmp",
+    config = require("configs.cmp").config
+  },
+  { "L3MON4D3/LuaSnip" },
+  { "saadparwaiz1/cmp_luasnip" }
+
 }
 
 -- bootstrap lazy.nvim
