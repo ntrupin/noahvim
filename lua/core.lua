@@ -1,3 +1,6 @@
+-- core.lua
+-- core settings, prefences, and keybinds
+
 -- iterate over pairs, add to vim options
 local function set_opts(opts)
   for k, v in pairs(opts) do

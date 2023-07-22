@@ -1,3 +1,6 @@
+-- plugins.lua
+-- self-explanatory
+
 -- plugins
 local plugins = {
   -- dependencies
