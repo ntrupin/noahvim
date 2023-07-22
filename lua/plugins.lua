@@ -24,7 +24,11 @@ local plugins = {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.2"
   },
-  { "nvim-telescope/telescope-file-browser.nvim" }
+  { "nvim-telescope/telescope-file-browser.nvim" },
+  { 
+    "kyazdani42/nvim-tree.lua",
+    config = require("configs.tree").config
+  }
 }
 
 -- bootstrap lazy.nvim
