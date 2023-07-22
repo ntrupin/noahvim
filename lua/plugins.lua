@@ -13,9 +13,17 @@ local plugins = {
       vim.cmd("colorscheme sonokai")
     end
   },
+  { "nvim-tree/nvim-web-devicons" },
 
   -- better syntax highlighting
-  { "nvim-treesitter/nvim-treesitter" }
+  { "nvim-treesitter/nvim-treesitter" },
+
+  -- telescope fuzzy finder and associated utils
+  {
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.2"
+  },
+  { "nvim-telescope/telescope-file-browser.nvim" }
 }
 
 -- bootstrap lazy.nvim

@@ -1,5 +1,5 @@
--- core.lua
--- core settings, prefences, and keybinds
+-- opts.lua
+-- core settings and preferences
 
 -- iterate over pairs, add to vim options
 local function set_opts(opts)
