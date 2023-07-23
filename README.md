@@ -1,5 +1,7 @@
 # Noahvim
 
+![noahvim](./assets/noahvim-splitpane.png)
+
 My Neovim configuration.
 
 ## Installation
