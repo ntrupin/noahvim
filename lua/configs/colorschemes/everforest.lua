@@ -1,5 +1,5 @@
 -- everforest.lua
--- everyforest colorscheme confirgurations
+-- everforest colorscheme confirgurations
 
 local M = {}
 
