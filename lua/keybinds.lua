@@ -6,7 +6,9 @@ vim.keymap.set({ 'n', 'v' }, ",", "<Nop>", { noremap = true })
 vim.g.mapleader = ","
 
 -- keybinds
-local keybinds = {}
+local keybinds = {
+
+}
 
 -- set keybinds
 for _, v in pairs(keybinds) do
@@ -18,8 +20,5 @@ for _, v in pairs(keybinds) do
     opts.desc = v.desc
   end
 
-  for _, keybind in pairs(keybinds) do
-    local lhs = keybind.lhs or keybind[1]
-    vim.keymap.set(keybind.mode, lhs, keybind.rhs, opts)
-  end
+  vim.keymap.set(v[1], v[2], v[3], opts)
 end

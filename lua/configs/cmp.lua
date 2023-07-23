@@ -7,6 +7,15 @@ M.config = function()
   local cmp = require("cmp")
 
   cmp.setup({
+    -- disable in comments
+    enabled = function()
+      local context = require("cmp.config.context")
+      if vim.api.nvim_get_mode().mode == "c" then
+        return true
+      else
+        return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
+      end
+    end,
     snippet = {
       expand = function(args)
         require("luasnip").lsp_expand(args.body)
@@ -24,7 +33,13 @@ M.config = function()
       ["<CR>"] = cmp.mapping.confirm({ select = true })
     }),
     sources = cmp.config.sources({
-      { name = "nvim_lsp" },
+      { 
+        name = "nvim_lsp",
+        -- disable Text suggestions
+        entry_filter = function(entry, ctx)
+          return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= "Text"
+        end
+      },
       { name = "luasnip" }
     }, {
       { name = "buffer" }
@@ -46,6 +61,7 @@ M.config = function()
       { name = "cmdline" }
     })
   })
+
 end
 
 return M
