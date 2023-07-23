@@ -77,8 +77,9 @@ do
   }
 
   -- check for full color support
-  local tco = tonumber(vim.o.t_Co or "0")
-  if tco > 256 then
+  -- local tco = tonumber(vim.o.t_Co or "0")
+  --if tco > 256 then
+  do
     set_opts(non_macos)
   end
 end

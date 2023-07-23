@@ -3,6 +3,11 @@
 
 local M = {}
 
+-- filter Text suggestions from entry
+local function filter_text(entry, _)
+  return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= "Text"
+end
+
 M.config = function()
   local cmp = require("cmp")
 
@@ -33,16 +38,18 @@ M.config = function()
       ["<CR>"] = cmp.mapping.confirm({ select = true })
     }),
     sources = cmp.config.sources({
-      { 
+      {
         name = "nvim_lsp",
         -- disable Text suggestions
-        entry_filter = function(entry, ctx)
-          return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= "Text"
-        end
+        entry_filter = filter_text
       },
       { name = "luasnip" }
     }, {
-      { name = "buffer" }
+      {
+        name = "buffer",
+        -- disable Text suggestions
+        entry_filter = filter_text
+      }
     })
   })
 

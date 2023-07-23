@@ -8,10 +8,30 @@ local plugins = {
 
   -- appearance
   {
-    "folke/tokyonight.nvim", -- colorscheme
-    config = require("configs.tokyonight").config
+    "sainnhe/everforest", -- colorscheme
+    config = require("configs.colorschemes.everforest").config
   },
-  { "nvim-tree/nvim-web-devicons" },
+  { "nvim-tree/nvim-web-devicons" }, -- icons
+  {
+    "norcalli/nvim-colorizer.lua", -- highlighter
+    config = require("configs.colorizer").config
+  },
+  {
+    "windwp/nvim-autopairs", -- autopairs
+    event = "InsertEnter",
+    opts = {}
+  },
+  {
+    "akinsho/bufferline.nvim", -- tab bar
+    version = "*",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    config = require("configs.bufferline").config
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    config = require("configs.lualine").config
+  },
 
   -- better syntax highlighting
   {

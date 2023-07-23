@@ -18,10 +18,7 @@ local function on_attach(bufnr)
   end
 
   -- default keybinds
-  api.config.mapping.default_on_attach(bufnr)
-
-  -- custom mappings
-
+  api.config.mappings.default_on_attach(bufnr)
 end
 
 M.config = function()
@@ -33,20 +30,39 @@ M.config = function()
     live_filter = {
       prefix = "[FILTER]: ",
       always_show_folders = false
-    }
+    },
+    on_attach = on_attach
   })
 
-  -- automatically open tree if dir is open
-  local open_tree = function(data)
-    if vim.fn.isdirectory(data.file) ~= 1 then
+  -- open nvim tree
+  local function open_nvim_tree(data)
+    -- is real file
+    local real_file = vim.fn.filereadable(data.file) == 1
+    -- is [No Name] buffer
+    local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
+    -- is directory
+    local directory = vim.fn.isdirectory(data.file) == 1
+
+    -- this should probably never occur, but doesn't hurt to be safe
+    if not real_file and not no_name and not directory then
       return
     end
-    vim.cmd.cd(data.file)
-    require("nvim-tree.api").tree.open()
+
+    -- change to directory, if directory
+    if directory then
+      vim.cmd.cd(data.file)
+    else
+      -- open the tree, find file (without focusing)
+      require("nvim-tree.api").tree.toggle({
+        focus = false,
+        find_file = true
+      })
+    end
+
   end
 
-  -- register autocmd 
-  vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_tree })
+  -- create autocmd for startup
+  vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 end
 
 return M
