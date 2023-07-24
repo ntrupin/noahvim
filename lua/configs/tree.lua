@@ -65,4 +65,9 @@ M.config = function()
   vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 end
 
+-- keybinds
+M.keybinds = {
+  { "n", "<leader>t", "<CMD>NvimTreeToggle<CR>", "[t]oggle file explorer" }
+}
+
 return M

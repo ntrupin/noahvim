@@ -28,9 +28,13 @@ local plugins = {
     config = require("configs.bufferline").config
   },
   {
-    "nvim-lualine/lualine.nvim",
+    "nvim-lualine/lualine.nvim", -- statusline
     dependencies = "nvim-tree/nvim-web-devicons",
     config = require("configs.lualine").config
+  },
+  {
+    "rcarriga/nvim-notify", -- notifications
+    config = require("configs.notify").config
   },
 
   -- better syntax highlighting
@@ -42,7 +46,8 @@ local plugins = {
   -- telescope fuzzy finder and associated utils
   {
     "nvim-telescope/telescope.nvim", --telescope
-    tag = "0.1.2"
+    tag = "0.1.2",
+    config = require("configs.telescope").config
   },
   { "nvim-telescope/telescope-file-browser.nvim" },
   {

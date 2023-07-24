@@ -70,17 +70,20 @@ do
   set_opts(opinionated)
 end
 
--- set non-maocs options
+-- set non-24-bit-color options
 do
-  local non_macos = {
+  local non_24bit = {
     termguicolors = true
   }
 
   -- check for full color support
-  -- local tco = tonumber(vim.o.t_Co or "0")
-  --if tco > 256 then
-  do
-    set_opts(non_macos)
+  local color = os.getenv("COLORTERM")
+  if color == "truecolor" or color == "24bit" then
+    set_opts(non_24bit)
+  else
+    vim.notify("Your terminal does not support 24-bit color or truecolor.\nNoahvim may not appear as intended.", vim.log.levels.WARN, {
+      title = "Noahvim"
+    })
   end
 end
 
