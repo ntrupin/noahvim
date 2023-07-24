@@ -7,16 +7,21 @@ local M = {}
 M.config = function()
   local previewers = require("telescope.previewers")
 
-  -- ignore large files in preview
+  -- ignore large files and binaries in preview
   local new_maker = function(filepath, bufnr, opts)
     opts = opts or {}
 
     filepath = vim.fn.expand(filepath)
+
+    local large_file_found = false
+
+    -- check for large file
     vim.loop.fs_stat(filepath, function(_, stat)
       if not stat then return end
       -- > 100mb
       if stat.size > 100000 then
         -- write an error to buffer
+        large_file_found = true
         vim.schedule(function()
           vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "FILE > 100MB" })
         end)
@@ -24,6 +29,27 @@ M.config = function()
         previewers.buffer_previewer_maker(filepath, bufnr, opts)
       end
     end)
+
+    if large_file_found then
+      return
+    end
+
+    -- check for binary
+    local Job = require("plenary.job")
+    Job:new({
+      command = "file",
+      args = { "--mime-type", "-b", filepath },
+      on_exit = function(j)
+        local mime_type = vim.split(j:result()[1], "/")[1]
+        if mime_type == "text" then
+          previewers.buffer_previewer_maker(filepath, bufnr, opts)
+        else
+          vim.schedule(function()
+            vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "BINARY FILE" })
+          end)
+        end
+      end
+    })
   end
 
   require("telescope").setup({
