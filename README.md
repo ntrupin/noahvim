@@ -35,4 +35,5 @@ git clone https://github.com/ntrupin/noahvim ~/.config/nvim
 
 ## Inspirations
 
+- [LazyVim/LazyVim](https://github.com/LazyVim/LazyVim)
 - [theopn/theovim](https://github.com/theopn/theovim)
