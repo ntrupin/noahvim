@@ -52,9 +52,16 @@ M.config = function()
     })
   end
 
+  local actions = require("telescope.actions")
   require("telescope").setup({
     defaults = {
-      buffer_previewer_maker = new_maker
+      buffer_previewer_maker = new_maker,
+      mappings = {
+        i = {
+          -- map esc to quit in insert mode
+          ["<esc>"] = actions.close
+        }
+      }
     }
   })
 end
