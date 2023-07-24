@@ -1,6 +1,6 @@
 # Noahvim
 
-![noahvim](./assets/noahvim-splitpane.png)
+![noahvim](./assets/noahvim-banner.png)
 
 My Neovim configuration.
 
