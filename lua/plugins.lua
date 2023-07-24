@@ -36,6 +36,10 @@ local plugins = {
     "rcarriga/nvim-notify", -- notifications
     config = require("configs.notify").config
   },
+  {
+    "lewis6991/gitsigns.nvim",
+    config = require("configs.gitsigns").config
+  },
 
   -- better syntax highlighting
   {

@@ -41,5 +41,12 @@ for _, v in pairs(keybinds) do
     opts.desc = v[4]
   end
 
+  -- extra options
+  if v[5] then
+    for k, val in pairs(v[5]) do
+      opts[k] = val
+    end
+  end
+
   vim.keymap.set(v[1], v[2], v[3], opts)
 end
