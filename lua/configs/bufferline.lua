@@ -57,7 +57,8 @@ M.config = function()
 
           return result
         end
-      }
+      },
+      always_show_bufferline = false
     }
   })
 end

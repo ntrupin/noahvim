@@ -64,6 +64,8 @@ M.config = function()
       }
     }
   })
+
+  require("telescope").load_extension("file_browser")
 end
 
 -- keybinds
@@ -71,8 +73,11 @@ M.keybinds = {
   { "n", "<leader>?", "<CMD>Telescope keymaps<CR>", "[?]: show keymaps" },
   { "n", "<leader>ff", "<CMD>Telescope find_files<CR>", "[f]ind [f]iles" },
   { "n", "<leader>fg", "<CMDTelescope live_grep<CR>", "[f][g]rep: live grep" },
-  { "n", "<leader>fb", "<CMD>Telescope buffer<CR>", "[f]ind [b]uffers: find buffers" },
-  { "n", "<leader>fh", "<CMD>Telescope help_tags<CR>", "[f]ind [h]elp: find help tags" }
+  { "n", "<leader>fu", "<CMD>Telescope buffer<CR>", "[f]ind b[u]ffers" },
+  { "n", "<leader>fh", "<CMD>Telescope help_tags<CR>", "[f]ind [h]elp" },
+  { "n", "<leader>fb", "<CMD>Telescope file_browser<CR>", "[f]ile [b]rowser" },
+  { "n", "<leader>f/", "<CMD>Telescope current_buffer_fuzzy_find<CR>", "[f]uzzy [/]: fuzzy find text in current buffer" },
+  { "n", "<leader>fr", "<CMD>Telescope oldfiles<CR>", "[f]ind [r]ecent" }
 }
 
 return M

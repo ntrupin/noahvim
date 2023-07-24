@@ -33,8 +33,8 @@ M.config = function()
     -- is directory
     local directory = vim.fn.isdirectory(data.file) == 1
 
-    -- this should probably never occur, but doesn't hurt to be safe
-    if not real_file and not no_name and not directory then
+    -- return if [No Name] or unknown
+    if no_name or (not real_file and not directory) then
       return
     end
 
@@ -58,6 +58,7 @@ end
 -- keybinds
 M.keybinds = {
   { "n", "<leader>t", "<CMD>NvimTreeToggle<CR>", "[t]oggle: toggle file explorer" },
+  { "n", "<leader>tf", "<CMD>NvimTreeFocus<CR>", "[f]ocus: focus the file explorer"}
 }
 
 return M
