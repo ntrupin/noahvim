@@ -75,8 +75,14 @@ local plugins = {
     config = require("configs.cmp").config
   },
   { "L3MON4D3/LuaSnip" },
-  { "saadparwaiz1/cmp_luasnip" }
+  { "saadparwaiz1/cmp_luasnip" },
 
+  -- writing
+  {
+    "lervag/vimtex",
+    config = require("configs.vimtex").config,
+    ft = { "plaintext", "text" }
+  }
 }
 
 -- bootstrap lazy.nvim
