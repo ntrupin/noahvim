@@ -28,4 +28,10 @@ M.keymaps_window = function()
 end
 vim.api.nvim_create_user_command("NoahvimKeymaps", M.keymaps_window, { nargs = 0 })
 
+-- show info window + autocmd
+M.info_window = function()
+  M.create_window_from_file("noahvim-docs/noahvim-info.md")
+end
+vim.api.nvim_create_user_command("NoahvimInfo", M.info_window, { nargs = 0 })
+
 return M
