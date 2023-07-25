@@ -28,8 +28,8 @@ local keybinds = {
   { "n", "<leader>L", "<C-w>L", "[L]: move window to the far right" },
 
   -- buffers
-  { "n", "<leader>[", "<leader>[", "<CMD>bprevious<CR>", "[[]: navigate to previous buffer" },
-  { "n", "<leader>]", "<leader>]", "<CMD>bnext<CR>", "[]]: navigate to next buffer" },
+  { "n", "<leader>[", "<CMD>bprevious<CR>", "[[]: navigate to previous buffer" },
+  { "n", "<leader>]", "<CMD>bnext<CR>", "[]]: navigate to next buffer" },
 
   -- lsp
   { "n", "<leader>cd", function() vim.lsp.buf.hover() end, "[c]ode [d]oc: show lsp hover doc for entity" },
