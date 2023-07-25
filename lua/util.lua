@@ -16,7 +16,10 @@ end
 
 -- get current git branch
 M.get_current_branch_name = function()
-  return vim.fn.system({"git", "rev-parse", "--abbrev-ref", "HEAD"})
+  local output = vim.fn.system({"git", "rev-parse", "--abbrev-ref", "HEAD"})
+  -- remove trailing linebreak
+  local clean = string.gsub(output, "\n$", "")
+  return clean
 end
 
 return M
