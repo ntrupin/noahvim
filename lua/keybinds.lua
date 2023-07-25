@@ -27,6 +27,10 @@ local keybinds = {
   { "n", "<leader>J", "<C-w>J", "[J]: move window to the bottom" },
   { "n", "<leader>L", "<C-w>L", "[L]: move window to the far right" },
 
+  -- buffers
+  { "n", "<leader>[", "<leader>[", "<CMD>bprevious<CR>", "[[]: navigate to previous buffer" },
+  { "n", "<leader>]", "<leader>]", "<CMD>bnext<CR>", "[]]: navigate to next buffer" },
+
   -- lsp
   { "n", "<leader>cd", function() vim.lsp.buf.hover() end, "[c]ode [d]oc: show lsp hover doc for entity" },
   { "n", "<leader>cr", function() vim.lsp.buf.rename() end, "[c]ode [r]ename: rename entity" },
