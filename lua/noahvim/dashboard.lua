@@ -162,16 +162,20 @@ end
 M.setup = function()
   M.opener()
 
+  -- resize function
+  local resize = function()
+    if vim.bo.filetype == "NoahvimDashboard" then
+      vim.opt_local.modifiable = true
+      vim.api.nvim_buf_set_lines(0, 0, -1, false, { "" })
+      M.opener()
+    end
+  end
+
   -- make autocmd for resize event
   vim.api.nvim_create_autocmd("VimResized", {
-    callback = function()
-      if vim.bo.filetype == "NoahvimDashboard" then
-        vim.opt_local.modifiable = true
-        vim.api.nvim_buf_set_lines(0, 0, -1, false, { "" })
-        M.opener()
-      end
-    end
+    callback = resize
   })
+
 end
 
 return M
