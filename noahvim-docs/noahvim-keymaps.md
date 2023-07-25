@@ -43,7 +43,7 @@
 - `<leader>fh`: [f]ind [h]elp
 - `<leader>fb`: [f]ile [b]rowser
 - `<leader>f/`: [f]uzzy [/] (find) text in current buffer
-- `<leader>b: [b]uffers`: show buffers`
+- `<leader>b: [b]uffers: show buffers`
 
 ## Buffers
 
