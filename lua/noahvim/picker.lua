@@ -59,14 +59,4 @@ M.create = function(prompt, entries, opts)
   pickers.new(opts, picker_options):find()
 end
 
-M.noahvim_menu = function()
-  M.floating_select_menu("Noahvim Menu", {
-    { "Toggle File Explorer",  "NvimTreeToggle" }
-  }, require("telescope.themes").get_ivy({
-    layout_config = {
-      height = 10
-    }
-  }))
-end
-
 return M
