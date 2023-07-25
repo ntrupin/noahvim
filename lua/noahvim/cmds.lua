@@ -16,12 +16,16 @@ end
 
 vim.api.nvim_create_user_command("NoahvimMenu", M.noahvim_menu, { nargs = 0 })
 
--- help/info files
-M.keymaps_window = function()
-  local keymapsdoc = vim.api.nvim_get_runtime_file("noahvim-docs/noahvim-keymaps.md", false)[1]
+-- create window helper
+M.create_window_from_file = function(filename)
+  local keymapsdoc = vim.api.nvim_get_runtime_file(filename, false)[1]
   return require("noahvim.window").create_with_md_file(keymapsdoc)
 end
 
+-- show keymaps window + autocmd
+M.keymaps_window = function()
+  M.create_window_from_file("noahvim-docs/noahvim-keymaps.md")
+end
 vim.api.nvim_create_user_command("NoahvimKeymaps", M.keymaps_window, { nargs = 0 })
 
 return M
