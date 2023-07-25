@@ -14,4 +14,9 @@ M.find_buffer_by_name = function(name)
   return -1
 end
 
+-- get current git branch
+M.get_current_branch_name = function()
+  return vim.fn.system({"git", "rev-parse", "--abbrev-ref", "HEAD"})
+end
+
 return M
