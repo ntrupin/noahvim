@@ -72,4 +72,12 @@ end
 
 vim.api.nvim_create_user_command("NoahvimChangelog", M.changelog_window, { nargs = 0 })
 
+-- show credits + autocmd
+M.credits_window = function()
+  M.create_window_from_file("docs/noahvim-credits.md")
+end
+
+vim.api.nvim_create_user_command("NoahvimCredits", M.credits_window, { nargs = 0 })
+
+
 return M
