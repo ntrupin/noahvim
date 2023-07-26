@@ -1,14 +1,26 @@
-# Noahvim Keymaps
+# Noahvim Help
+
+Commands, keymaps, and other helpful items.
+
+## Commands
+
+- `NoahvimMenu` or `<leader>m`: open the command menu
+- `NoahvimGit` or <leader>g: open a menu of git commands
+- `NoahvimTerm` or <leader>z: open a menu of terminal commands
+- `NoahvimHelp`: show the help page
+- `NoahvimChangelog`: show the changelog
+
+## Keymaps
 
 - `<leader>` = `<SPACE>`
 - `<leader>?`: show all keymaps
 
-## Copy/Paste
+### Copy/Paste
 
 - `<leader>y`: [y]ank to system clipboard
 - `<leader>p`: [p]aste from Telescope registers
 
-## Split Panes
+### Split Panes
 
 - `<leader>|`: create a vertical split
 - `<leader>-`: create a horizontal split
@@ -25,17 +37,17 @@
 - `<leader>J`: move window to the bottom
 - `<leader>L`: move window to the far right
 
-## LSP
+### LSP
 
 - `<leader>cd`: show the [c]ode [d]oc for the selected entity
 - `<leader>cr`: [r]ename the selected entity
 
-## Tree
+### Tree
 
 - `<leader>t`: [t]oggle the file explorer
 - `<leader>tf`: [f]ocus the file explorer
 
-## Telescope
+### Telescope
 
 - `<leader>?`: show keymaps
 - `<leader>ff`: [f]ind [f]iles
@@ -45,7 +57,11 @@
 - `<leader>f/`: [f]uzzy [/] (find) text in current buffer
 - `<leader>b: [b]uffers: show buffers`
 
-## Buffers
+### Buffers
 
 - `<leader>[`: navigate to previous buffer
 - `<leader>]`: navigate to next buffer
+
+### Terminal Mode
+
+- `<ESC>`: return to terminal normal mode
