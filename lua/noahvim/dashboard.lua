@@ -92,10 +92,6 @@ local render = function()
   end
   table.remove(dashboard, #dashboard)
 
-  for _, val in ipairs(credits) do
-    table.insert(dashboard, add_padding(val))
-  end
-
   -- set dashboard
   local result = {}
   for i = 1, height do
