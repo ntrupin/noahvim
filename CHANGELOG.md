@@ -2,7 +2,7 @@
 
 ## Changelog
 
-Generated with `git log <branch>/<branch>..<branch> --grep="^chore: " --invert-grep --pretty=format:"- [%h]: %s"`
+Generated with `git log <target>/<branch>..<branch> --grep="^chore: " --invert-grep --pretty=format:"- [%h]: %s"`
 
 ### Version 2023.07.xx.dev
 
