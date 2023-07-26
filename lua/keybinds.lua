@@ -11,6 +11,9 @@ local keybinds = {
   { "x", "<leader>y", '"+y', "[y]ank: yank to system clipboard" },
   { "n", "<leader>p", "<CMD>Telescope registers<CR>", "[p]aste: paste from Telescope registers" },
 
+  -- terminal
+  { "t", "<ESC>", "<C-\\><C-n>", "[ESC]: exit terminal mode"},
+
   -- split panes
   { "n", "<leader>|", "<CMD>vsplit<CR><C-w>l", "[|]: create a vertical split" },
   { "n", "<leader>-", "<CMD>split<CR><C-w>j", "[-]: create a horizontal split" },
@@ -37,6 +40,8 @@ local keybinds = {
 
   -- menus
   { "n", "<leader>m", require("noahvim.cmds").noahvim_menu, "[m]enu: show menu" },
+  { "n", "<leader>g", require("noahvim.cmds").git_menu, "[g]it menu: show git menu" },
+  { "n", "<leader>z", require("noahvim.cmds").term_menu, "[z]sh menu: show term menu" },
 
   table.unpack(require("configs.tree").keybinds),
   table.unpack(require("configs.telescope").keybinds)
