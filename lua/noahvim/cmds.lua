@@ -23,6 +23,8 @@ M.git_menu = function()
   require("noahvim.picker").create("Noahvim Git Menu", {
     { "Git Status", "Telescope git_status" },
     { "Git Commits", "Telescope git_commits" },
+    { "Git Branch Commits", "Telescope git_bcommits" },
+    { "Git Branches", "Telescope git_branches" },
     { "Git Diff Buffer", "Git diffthis" },
   }, require("telescope.themes").get_ivy({
     layout_config = {
