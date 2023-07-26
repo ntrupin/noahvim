@@ -4,6 +4,12 @@
 
 local M = {}
 
+local header = {
+  [[     _      _      _      ]],
+  [[   >(.)__ <(.)__ =(.)__   ]],
+  [[    (___/  (___/  (___/   ]]
+}
+
 local logo = {
   [[   ._  _  _.|_   o._ _    ]],
   [[   | |(_)(_|| |\/|| | |   ]],
@@ -16,6 +22,7 @@ local options = {
   { "󰈙 Recent Files  <leader>fr", cmd = "Telescope oldfiles" },
   { " Open Notepad            ", cmd = "<NOP>" },
   { " File Browser  <leader>fb", cmd = "Telescope file_browser" },
+  { " Credits                 ", cmd = "NoahvimCredits" },
   { " Exit Noahvim   <leader>q", cmd = "quit" }
 }
 
@@ -23,9 +30,11 @@ local min_width = #logo[1]
 local empty_line = string.rep(" ", min_width)
 
 -- pad empty line
+table.insert(header, 1, empty_line)
+header[#header + 1] = empty_line
 logo[#logo + 1] = empty_line
 
-local min_height = 1 + #logo + (#options * 2) + 1 + 1
+local min_height = 1 + #header + #logo + (#options * 2) + 1 + 1
 
 local render = function()
   -- get dimensions
@@ -69,6 +78,10 @@ local render = function()
   -- dashboard contents
   local dashboard = {}
 
+  for _, val in ipairs(header) do
+    table.insert(dashboard, add_padding(val))
+  end
+
   for _, val in ipairs(logo) do
     table.insert(dashboard, add_padding(val))
   end
@@ -78,6 +91,10 @@ local render = function()
     table.insert(dashboard, empty_line)
   end
   table.remove(dashboard, #dashboard)
+
+  for _, val in ipairs(credits) do
+    table.insert(dashboard, add_padding(val))
+  end
 
   -- set dashboard
   local result = {}
@@ -162,16 +179,20 @@ end
 M.setup = function()
   M.opener()
 
+  -- resize function
+  local resize = function()
+    if vim.bo.filetype == "NoahvimDashboard" then
+      vim.opt_local.modifiable = true
+      vim.api.nvim_buf_set_lines(0, 0, -1, false, { "" })
+      M.opener()
+    end
+  end
+
   -- make autocmd for resize event
   vim.api.nvim_create_autocmd("VimResized", {
-    callback = function()
-      if vim.bo.filetype == "NoahvimDashboard" then
-        vim.opt_local.modifiable = true
-        vim.api.nvim_buf_set_lines(0, 0, -1, false, { "" })
-        M.opener()
-      end
-    end
+    callback = resize
   })
+
 end
 
 return M

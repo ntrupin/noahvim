@@ -40,7 +40,12 @@
 - `<leader>?`: show keymaps
 - `<leader>ff`: [f]ind [f]iles
 - `<leader>fg`: live [f]ind/[g]rep
-- `<leader>fu`: [f]ind b[u]ffers
 - `<leader>fh`: [f]ind [h]elp
 - `<leader>fb`: [f]ile [b]rowser
 - `<leader>f/`: [f]uzzy [/] (find) text in current buffer
+- `<leader>b: [b]uffers: show buffers`
+
+## Buffers
+
+- `<leader>[`: navigate to previous buffer
+- `<leader>]`: navigate to next buffer

@@ -93,8 +93,12 @@ do
     lua = {
       tabstop = 2,
       shiftwidth = 2
+    },
+    javascript = {
+      tabstop = 2,
+      shiftwidth = 2
     }
-  } 
+  }
 
   -- make list of ftypes
   local ftypes = {}
