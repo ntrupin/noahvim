@@ -2,16 +2,22 @@
 
 ## Changelog
 
-Generated with `git log origin/<branch>..<branch> --pretty=format:"- [%h]: %s"`
+Generated with `git log <branch>/<branch>..<branch> --grep="^chore: " --invert-grep --pretty=format:"- [%h]: %s"`
 
-### Version 2023.07.25.dev
+### Version 2023.07.xx.dev
 
 > This update revolves around lua/noahvim/cmds.lua and creating menus for frequently-used commands.
 
+- [1666b7a]: feat(keybinds): add menu keybinds
+- [fdd9aa6]: feat(cmds): add terminal menu
+- [4f623bb]: refactor(docs): rename changelog
+- [7cbcdd3]: refactor(docs): move some more
+- [9b6a6fe]: refactor(docs): moved files around
+- [64bf479]: feat(cmds): add git branch commands
+- [7b0fce4]: feat(opts): switch javascript to use 2-space tabs
 - [78dc121]: feat(cmds): add git_menu
 - [0734d34]: feat(util): trim linebreak from get_current_branch_name
 - [0c70e73]: feat(util): add get_current_branch_name
-- [7a9956f]: chore: update keymaps
 - [604ab33]: feat(cmds): add info_window
 - [96e1e29]: refactor(cmds): abstract out create_window_from_file
 - [fd5e6a5]: fix(keybinds): too many arguments for buffers
