@@ -39,10 +39,8 @@ vim.api.nvim_create_user_command("NoahvimGit", M.git_menu, { nargs = 0 })
 -- terminal menu + autocmd
 M.term_menu = function()
   require("noahvim.picker").create("Noahvim Terminal Menu", {
-    { "Bottom", "bot " .. math.ceil(vim.fn.winheight(0) * 0.25) .. "sp | term" },
-    { "Left", "top " .. math.ceil(vim.fn.winwidth(0) * 0.25) .. "vs | term" },
-    { "Right",  "bot " .. math.ceil(vim.fn.winwidth(0) * 0.25) .. "vs | term" },
-    { "Top", "top" .. math.ceil(vim.fn.winheight(0) * 0.25) .. "sp | term" }
+    { "Side", "split | term" },
+    { "Below", "vsplit | term" }
   }, require("telescope.themes").get_ivy({
     layout_config = {
       height = 10
