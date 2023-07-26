@@ -2,18 +2,18 @@
 
 Commands, keymaps, and other helpful items.
 
+- `<leader>` = `<SPACE>`
+- `<leader>?`: show all keymaps
+
 ## Commands
 
 - `NoahvimMenu` or `<leader>m`: open the command menu
-- `NoahvimGit` or <leader>g: open a menu of git commands
-- `NoahvimTerm` or <leader>z: open a menu of terminal commands
+- `NoahvimGit` or `<leader>g`: open a menu of git commands
+- `NoahvimTerm` or `<leader>z`: open a menu of terminal commands
 - `NoahvimHelp`: show the help page
 - `NoahvimChangelog`: show the changelog
 
 ## Keymaps
-
-- `<leader>` = `<SPACE>`
-- `<leader>?`: show all keymaps
 
 ### Copy/Paste
 
