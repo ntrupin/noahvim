@@ -6,7 +6,10 @@ local M = {}
 -- Noahvim menu
 M.noahvim_menu = function()
   require("noahvim.picker").create("Noahvim Menu", {
-    { "Toggle File Explorer",  "NvimTreeToggle" }
+    { "Toggle File Explorer",  "NvimTreeToggle" },
+    { "Noahvim Git Menu", "NoahvimGit" },
+    { "Noahvim Help Page", "NoahvimHelp" },
+    { "Noahvim Changelog", "NoahvimChangelog" }
   }, require("telescope.themes").get_ivy({
     layout_config = {
       height = 10
@@ -41,7 +44,7 @@ end
 
 -- show help window + autocmd
 M.help_window = function()
-  M.create_window_from_file("noahvim-docs/noahvim-help.md")
+  M.create_window_from_file("docs/noahvim-help.md")
 end
 
 vim.api.nvim_create_user_command("NoahvimHelp", M.help_window, { nargs = 0 })
