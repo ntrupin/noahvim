@@ -4,7 +4,7 @@
 
 Generated with `git log <target>/<branch>..<branch> --grep="^chore: " --invert-grep --pretty=format:"- [%h]: %s"`
 
-### Version 2023.07.xx.dev
+### Version 2023.07.26
 
 > This update revolves around lua/noahvim/cmds.lua and creating menus for frequently-used commands.
 
