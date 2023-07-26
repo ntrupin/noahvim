@@ -3,8 +3,6 @@
 
 local M = {}
 
-local util = require("util")
-
 -- Noahvim menu
 M.noahvim_menu = function()
   require("noahvim.picker").create("Noahvim Menu", {
@@ -41,18 +39,18 @@ M.create_window_from_file = function(filename)
   return require("noahvim.window").create_with_md_file(keymapsdoc)
 end
 
--- show keymaps window + autocmd
-M.keymaps_window = function()
-  M.create_window_from_file("noahvim-docs/noahvim-keymaps.md")
+-- show help window + autocmd
+M.help_window = function()
+  M.create_window_from_file("noahvim-docs/noahvim-help.md")
 end
 
-vim.api.nvim_create_user_command("NoahvimKeymaps", M.keymaps_window, { nargs = 0 })
+vim.api.nvim_create_user_command("NoahvimHelp", M.help_window, { nargs = 0 })
 
 -- show info window + autocmd
-M.info_window = function()
-  M.create_window_from_file("noahvim-docs/noahvim-info.md")
+M.changelog_window = function()
+  M.create_window_from_file("CHANGELOG.md")
 end
 
-vim.api.nvim_create_user_command("NoahvimInfo", M.info_window, { nargs = 0 })
+vim.api.nvim_create_user_command("NoahvimChangelog", M.changelog_window, { nargs = 0 })
 
 return M
