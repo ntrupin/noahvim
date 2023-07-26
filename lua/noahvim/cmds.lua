@@ -36,6 +36,22 @@ end
 
 vim.api.nvim_create_user_command("NoahvimGit", M.git_menu, { nargs = 0 })
 
+-- terminal menu + autocmd
+M.term_menu = function()
+  require("noahvim.picker").create("Noahvim Terminal Menu", {
+    { "Bottom", "bot " .. math.ceil(vim.fn.winheight(0) * 0.25) .. "sp | term" },
+    { "Left", "top " .. math.ceil(vim.fn.winwidth(0) * 0.25) .. "vs | term" },
+    { "Right",  "bot " .. math.ceil(vim.fn.winwidth(0) * 0.25) .. "vs | term" },
+    { "Top", "top" .. math.ceil(vim.fn.winheight(0) * 0.25) .. "sp | term" }
+  }, require("telescope.themes").get_ivy({
+    layout_config = {
+      height = 10
+    }
+  }))
+end
+
+vim.api.nvim_create_user_command("NoahvimTerm", M.term_menu, { nargs = 0 })
+
 -- create window helper
 M.create_window_from_file = function(filename)
   local keymapsdoc = vim.api.nvim_get_runtime_file(filename, false)[1]
