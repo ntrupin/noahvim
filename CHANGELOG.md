@@ -8,6 +8,9 @@ Generated with `git log <branch>/<branch>..<branch> --grep="^chore: " --invert-g
 
 > This update revolves around lua/noahvim/cmds.lua and creating menus for frequently-used commands.
 
+- [8947c31]: feat(cmds): add credits_window
+- [86f693d]: feat(docs): add credits page
+- [dd12592]: feat(dashboard): add ducks and credits
 - [1666b7a]: feat(keybinds): add menu keybinds
 - [fdd9aa6]: feat(cmds): add terminal menu
 - [4f623bb]: refactor(docs): rename changelog
