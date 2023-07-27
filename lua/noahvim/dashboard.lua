@@ -110,12 +110,12 @@ local render = function()
 
   -- set cursor to first char
   local cursor_column_idx = (width > min_width) and (math.floor(width / 2) - 15) or 0
-  vim.api.nvim_win_set_cursor(0, { hdr_start_idx + #logo, cursor_column_idx })
+  vim.api.nvim_win_set_cursor(0, { hdr_start_idx + #header + #logo, cursor_column_idx })
 
   -- keybinds
 
   -- button locations
-  local curr_btn_line = hdr_start_idx + #logo + 2
+  local curr_btn_line = hdr_start_idx + #header + #logo + 2
   local opts_line_nums = {}
 
   for _, _ in ipairs(options) do
