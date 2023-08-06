@@ -70,16 +70,16 @@ do
   set_opts(opinionated)
 end
 
--- set non-24-bit-color options
+-- set 24-bit-color options
 do
-  local non_24bit = {
+  local bit24 = {
     termguicolors = true
   }
 
   -- check for full color support
   local color = os.getenv("COLORTERM")
   if color == "truecolor" or color == "24bit" then
-    set_opts(non_24bit)
+    set_opts(bit24)
   else
     vim.notify("Your terminal does not support 24-bit color or truecolor.\nNoahvim may not appear as intended.", vim.log.levels.WARN, {
       title = "Noahvim"
@@ -95,6 +95,10 @@ do
       shiftwidth = 2
     },
     javascript = {
+      tabstop = 2,
+      shiftwidth = 2
+    },
+    tex = {
       tabstop = 2,
       shiftwidth = 2
     }
