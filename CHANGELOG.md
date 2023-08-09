@@ -4,9 +4,15 @@
 
 Generated with `git log <target>/<branch>..<branch> --grep="^chore: " --invert-grep --pretty=format:"- [%h]: %s"`
 
+### Version 2023.08.09.dev
+
+- [b698707]: fix(window): vertical positioning
+- [fc0b784]: feat: add scratchpad
+- [8b42693]: fix(opts): change split direction
+
 ### Version 2023.08.09
 
-- [b74c300]: feat(ops): vim indent rules
+- [b74c300]: feat(opts): vim indent rules
 - [bd38f8e]: feat(opts): tex indent rules
 - [f716bca]: fix(dashboard): cursor placement
 - [9fcdbee]: fix: assorted typos
