@@ -57,8 +57,7 @@ end
 
 -- keybinds
 M.keybinds = {
-  { "n", "<leader>t", "<CMD>NvimTreeToggle<CR>", "[t]oggle: toggle file explorer" },
-  { "n", "<leader>tf", "<CMD>NvimTreeFocus<CR>", "[f]ocus: focus the file explorer"}
+  { "n", "<leader>t", "<CMD>NvimTreeToggle<CR>", "[t]oggle: toggle file explorer" }
 }
 
 return M
