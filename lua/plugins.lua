@@ -85,7 +85,7 @@ local plugins = {
   {
     "lervag/vimtex",
     config = require("configs.vimtex").config,
-    ft = { "plaintext", "text" }
+    ft = { "plaintex", "tex" }
   }
 }
 

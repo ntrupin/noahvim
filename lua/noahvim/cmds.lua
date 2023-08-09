@@ -3,7 +3,7 @@
 
 local M = {}
 
--- Noahvim menu
+-- noahvim menu + command
 M.noahvim_menu = function()
   require("noahvim.picker").create("Noahvim Menu", {
     { "Toggle File Explorer",  "NvimTreeToggle" },
@@ -19,7 +19,7 @@ end
 
 vim.api.nvim_create_user_command("NoahvimMenu", M.noahvim_menu, { nargs = 0 })
 
--- git menu + autocmd
+-- git menu + command
 M.git_menu = function()
   require("noahvim.picker").create("Noahvim Git Menu", {
     { "Git Status", "Telescope git_status" },
@@ -36,13 +36,11 @@ end
 
 vim.api.nvim_create_user_command("NoahvimGit", M.git_menu, { nargs = 0 })
 
--- terminal menu + autocmd
+-- terminal menu + command
 M.term_menu = function()
   require("noahvim.picker").create("Noahvim Terminal Menu", {
-    { "Bottom", "bot " .. math.ceil(vim.fn.winheight(0) * 0.25) .. "sp | term" },
-    { "Left", "top " .. math.ceil(vim.fn.winwidth(0) * 0.25) .. "vs | term" },
-    { "Right",  "bot " .. math.ceil(vim.fn.winwidth(0) * 0.25) .. "vs | term" },
-    { "Top", "top" .. math.ceil(vim.fn.winheight(0) * 0.25) .. "sp | term" }
+    { "Open with Horizontal Split", "split | term" },
+    { "Open with Vertical Split", "vsplit | term" }
   }, require("telescope.themes").get_ivy({
     layout_config = {
       height = 10
@@ -58,21 +56,21 @@ M.create_window_from_file = function(filename)
   return require("noahvim.window").create_with_md_file(keymapsdoc)
 end
 
--- show help window + autocmd
+-- show help window + command
 M.help_window = function()
   M.create_window_from_file("docs/noahvim-help.md")
 end
 
 vim.api.nvim_create_user_command("NoahvimHelp", M.help_window, { nargs = 0 })
 
--- show info window + autocmd
+-- show info window + command
 M.changelog_window = function()
   M.create_window_from_file("CHANGELOG.md")
 end
 
 vim.api.nvim_create_user_command("NoahvimChangelog", M.changelog_window, { nargs = 0 })
 
--- show credits + autocmd
+-- show credits + command
 M.credits_window = function()
   M.create_window_from_file("docs/noahvim-credits.md")
 end
