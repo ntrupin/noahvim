@@ -4,6 +4,17 @@
 
 Generated with `git log <target>/<branch>..<branch> --grep="^chore: " --invert-grep --pretty=format:"- [%h]: %s"`
 
+### Version 2023.08.09
+
+- [b74c300]: feat(ops): vim indent rules
+- [bd38f8e]: feat(opts): tex indent rules
+- [f716bca]: fix(dashboard): cursor placement
+- [9fcdbee]: fix: assorted typos
+- [5c7bc17]: fix: update gitignore
+- [486913f]: fix(dashboard): undefined var
+- [9d5b4b6]: fix(cmds): improve term_menu verbosity
+- [245e257]: feat(cmds): change term_menu commands
+
 ### Version 2023.07.26
 
 > This update revolves around lua/noahvim/cmds.lua and creating menus for frequently-used commands.
