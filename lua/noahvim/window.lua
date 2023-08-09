@@ -15,7 +15,7 @@ M.create_with_md_file = function(filepath, opts)
 
   -- center window
   local x = math.ceil((vim.o.columns - width) * 0.5)
-  local y = math.ceil((vim.o.lines - height) * 0.5)
+  local y = math.ceil((vim.o.lines - height) * 0.5) - 1
 
   local win_opts = {
     border = "rounded",
