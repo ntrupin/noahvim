@@ -77,5 +77,8 @@ end
 
 vim.api.nvim_create_user_command("NoahvimCredits", M.credits_window, { nargs = 0 })
 
+-- notepad command
+vim.api.nvim_create_user_command("NoahvimScratch", require("noahvim.scratch").launch, { nargs = 0 })
+
 
 return M
