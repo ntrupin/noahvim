@@ -32,7 +32,7 @@ M.create_with_md_file = function(filepath, opts)
   local win = vim.api.nvim_open_win(buf, true, win_opts)
 
   vim.api.nvim_buf_set_option(buf, "bufhidden", "wipe") -- wipe buffer on hide
-  vim.api.nvim_buf_set_option(buf, "filetype", "markdown") -- markdown file
+  vim.api.nvim_buf_set_option(buf, "filetype", opts.filetype or "markdown") -- markdown file
   vim.opt_local.spell = false
   vim.api.nvim_win_set_option(win, "winblend", 0) -- solid
 
