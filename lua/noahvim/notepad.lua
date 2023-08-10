@@ -1,5 +1,5 @@
--- scratch.lua
--- notepad
+-- notepad.lua
+-- temporary scratch buffer
 
 local M = {}
 
@@ -13,6 +13,11 @@ M.launch = function()
       note_buf = vim.api.nvim_create_buf(false, true)
       vim.api.nvim_buf_set_option(note_buf, "bufhidden", "hide") -- wipe buffer on hide
       vim.api.nvim_buf_set_option(note_buf, "filetype", "markdown") -- markdown file
+      vim.api.nvim_buf_set_lines(note_buf, 0, -1, false, {
+        "# Notepad " .. os.date("%Y-%m-%d %H:%M:%S"),
+        "",
+        "This buffer clears when you close your Neovim session."
+      }) -- welcome message
     end
 
     local height = math.ceil(vim.o.lines * 0.8)
@@ -20,7 +25,7 @@ M.launch = function()
 
     -- center window
     local x = math.ceil((vim.o.columns - width) * 0.5)
-    local y = math.ceil((vim.o.lines - height) * 0.5) - 1
+    local y = math.ceil((vim.o.lines - height) * 0.5) - 2
 
     local win_opts = {
       border = "rounded",
@@ -44,10 +49,7 @@ M.launch = function()
     vim.keymap.set("n", "q", M.launch, keymap_opts)
 
     vim.opt_local.spell = true
-
-    vim.cmd("startinsert") -- enter insert mode
   else
-    vim.cmd("stopinsert") -- exit insert mode
     vim.api.nvim_win_hide(note_win)
   end
   M.loaded = not M.loaded
