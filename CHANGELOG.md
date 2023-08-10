@@ -4,8 +4,12 @@
 
 Generated with `git log <target>/<branch>..<branch> --grep="^chore: " --invert-grep --pretty=format:"- [%h]: %s"`
 
-### Version 2023.08.10.dev
+### Version 2023.08.xx.dev
 
+- [540fe40]: fix(notepad): remove insert mode esc binding
+- [7e57014]: feat(colorschemes): add oxocarbon config
+- [136c135]: feat(notepad): show welcome message on notepad
+- [c167414]: feat(tree): actions menu
 - [348f53d]: refactor(notepad): rename scratch
 - [cd5a579]: fix(scratch): exit insert before closing window
 - [d0765b6]: feat(scratch): open into insert mode
