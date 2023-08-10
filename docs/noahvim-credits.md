@@ -6,6 +6,7 @@ Here are some other awesome Neovim configs I took inspiration from. Check them o
 
 - [LazyVim/LazyVim](https://github.com/LazyVim/LazyVim)
 - [theopn/theovim](https://github.com/theopn/theovim)
+- [amix/vimrc](https://github.com/amix/vimrc)
 
 ## ASCII Art
 
