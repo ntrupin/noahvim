@@ -4,8 +4,13 @@
 
 Generated with `git log <target>/<branch>..<branch> --grep="^chore: " --invert-grep --pretty=format:"- [%h]: %s"`
 
-### Version 2023.08.09.dev
+### Version 2023.08.10.dev
 
+- [348f53d]: refactor(notepad): rename scratch
+- [cd5a579]: fix(scratch): exit insert before closing window
+- [d0765b6]: feat(scratch): open into insert mode
+- [c06f464]: feat(tree): remove focus keybind
+- [1e836d8]: feat(window): allow other filetypes
 - [b698707]: fix(window): vertical positioning
 - [fc0b784]: feat: add scratchpad
 - [8b42693]: fix(opts): change split direction
