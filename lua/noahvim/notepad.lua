@@ -45,7 +45,6 @@ M.launch = function()
       buffer = note_buf
     }
     vim.keymap.set("n", "<ESC>", M.launch, keymap_opts)
-    vim.keymap.set("i", "<ESC>", M.launch, keymap_opts)
     vim.keymap.set("n", "q", M.launch, keymap_opts)
 
     vim.opt_local.spell = true
