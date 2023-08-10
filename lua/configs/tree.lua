@@ -9,6 +9,28 @@ local function on_attach(bufnr)
 
   -- default keybinds
   api.config.mappings.default_on_attach(bufnr)
+
+  -- file actions picker
+  local actions = function()
+    require("noahvim.picker").create("Noahvim File Actions", {
+      { "Create node", api.fs.create },
+      { "Remove node", api.fs.remove },
+      { "Trash node", api.fs.trash },
+      { "Rename node", api.fs.rename },
+      { "Fully rename node", api.fs.rename_sub },
+      { "Copy", api.fs.copy.node },
+    }, require("telescope.themes").get_ivy({
+      layout_config = {
+        height = 10
+      }
+    }))
+  end
+
+  vim.keymap.set("n", "<C-Space>", actions, {
+    buffer = bufnr,
+    noremap = true,
+    silent = true,
+  })
 end
 
 M.config = function()
