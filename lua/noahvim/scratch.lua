@@ -40,11 +40,15 @@ M.launch = function()
       buffer = scratch_buf
     }
     vim.keymap.set("n", "<ESC>", M.launch, keymap_opts)
+    vim.keymap.set("i", "<ESC>", M.launch, keymap_opts)
     vim.keymap.set("n", "q", M.launch, keymap_opts)
 
     vim.opt_local.spell = true
+
+    vim.cmd("startinsert") -- enter insert mode
   else
     vim.api.nvim_win_hide(scratch_win)
+    vim.cmd("stopinsert") -- exit insert mode
   end
   M.loaded = not M.loaded
 end
