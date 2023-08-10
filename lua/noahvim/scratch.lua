@@ -47,8 +47,8 @@ M.launch = function()
 
     vim.cmd("startinsert") -- enter insert mode
   else
-    vim.api.nvim_win_hide(scratch_win)
     vim.cmd("stopinsert") -- exit insert mode
+    vim.api.nvim_win_hide(scratch_win)
   end
   M.loaded = not M.loaded
 end
