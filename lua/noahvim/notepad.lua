@@ -4,15 +4,15 @@
 local M = {}
 
 M.loaded = false
-local scratch_buf, scratch_win
+local note_buf, note_win
 
 M.launch = function()
-  if not M.loaded or not vim.api.nvim_win_is_valid(scratch_win) then
+  if not M.loaded or not vim.api.nvim_win_is_valid(note_win) then
 
-    if not scratch_buf or not vim.api.nvim_buf_is_valid(scratch_buf) then
-      scratch_buf = vim.api.nvim_create_buf(false, true)
-      vim.api.nvim_buf_set_option(scratch_buf, "bufhidden", "hide") -- wipe buffer on hide
-      vim.api.nvim_buf_set_option(scratch_buf, "filetype", "markdown") -- markdown file
+    if not note_buf or not vim.api.nvim_buf_is_valid(note_buf) then
+      note_buf = vim.api.nvim_create_buf(false, true)
+      vim.api.nvim_buf_set_option(note_buf, "bufhidden", "hide") -- wipe buffer on hide
+      vim.api.nvim_buf_set_option(note_buf, "filetype", "markdown") -- markdown file
     end
 
     local height = math.ceil(vim.o.lines * 0.8)
@@ -32,12 +32,12 @@ M.launch = function()
       col = x
     }
 
-    scratch_win = vim.api.nvim_open_win(scratch_buf, true, win_opts);
-    vim.api.nvim_win_set_option(scratch_win, "winblend", 30)
+    note_win = vim.api.nvim_open_win(note_buf, true, win_opts);
+    vim.api.nvim_win_set_option(note_win, "winblend", 30)
 
     local keymap_opts = {
       silent = true,
-      buffer = scratch_buf
+      buffer = note_buf
     }
     vim.keymap.set("n", "<ESC>", M.launch, keymap_opts)
     vim.keymap.set("i", "<ESC>", M.launch, keymap_opts)
@@ -48,7 +48,7 @@ M.launch = function()
     vim.cmd("startinsert") -- enter insert mode
   else
     vim.cmd("stopinsert") -- exit insert mode
-    vim.api.nvim_win_hide(scratch_win)
+    vim.api.nvim_win_hide(note_win)
   end
   M.loaded = not M.loaded
 end
