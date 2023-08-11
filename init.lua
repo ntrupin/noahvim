@@ -10,4 +10,4 @@ require("plugins")
 require("commands")
 
 -- setup dashboard
-require("noahvim.dashboard").setup()
+require("ui.dashboard").setup()
