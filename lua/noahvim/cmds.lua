@@ -5,7 +5,7 @@ local M = {}
 
 -- noahvim menu + command
 M.noahvim_menu = function()
-  require("noahvim.picker").create("Noahvim Menu", {
+  require("util.picker").create("Noahvim Menu", {
     { "Toggle File Explorer",  "NvimTreeToggle" },
     { "Noahvim Git Menu", "NoahvimGit" },
     { "Noahvim Help Page", "NoahvimHelp" },
@@ -21,7 +21,7 @@ vim.api.nvim_create_user_command("NoahvimMenu", M.noahvim_menu, { nargs = 0 })
 
 -- git menu + command
 M.git_menu = function()
-  require("noahvim.picker").create("Noahvim Git Menu", {
+  require("util.picker").create("Noahvim Git Menu", {
     { "Git Status", "Telescope git_status" },
     { "Git Commits", "Telescope git_commits" },
     { "Git Branch Commits", "Telescope git_bcommits" },
@@ -38,7 +38,7 @@ vim.api.nvim_create_user_command("NoahvimGit", M.git_menu, { nargs = 0 })
 
 -- terminal menu + command
 M.term_menu = function()
-  require("noahvim.picker").create("Noahvim Terminal Menu", {
+  require("util.picker").create("Noahvim Terminal Menu", {
     { "Open with Horizontal Split", "split | term" },
     { "Open with Vertical Split", "vsplit | term" }
   }, require("telescope.themes").get_ivy({

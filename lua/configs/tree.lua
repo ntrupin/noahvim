@@ -12,7 +12,7 @@ local function on_attach(bufnr)
 
   -- file actions picker
   local actions = function()
-    require("noahvim.picker").create("Noahvim File Actions", {
+    require("util.picker").create("Noahvim File Actions", {
       { "Create node", api.fs.create },
       { "Remove node", api.fs.remove },
       { "Trash node", api.fs.trash },

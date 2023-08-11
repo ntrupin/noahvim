@@ -18,7 +18,7 @@ M.config = function()
     automatic_installation = true,
     handlers = {
       function(server_name)
-        lsp[server_name].setup({ 
+        lsp[server_name].setup({
           capabilities = capabilities
         })
       end,
