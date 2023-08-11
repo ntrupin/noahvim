@@ -7,7 +7,7 @@ end
 require("opts")
 require("keybinds")
 require("plugins")
-require("noahvim.cmds")
+require("commands")
 
 -- setup dashboard
 require("noahvim.dashboard").setup()
