@@ -14,7 +14,7 @@ local plugins = {
   { "nvim-tree/nvim-web-devicons" }, -- icons
   {
     "norcalli/nvim-colorizer.lua", -- highlighter
-    config = require("config.colorizer").config
+    config = require("config.colorizer").setup
   },
   {
     "windwp/nvim-autopairs", -- autopairs

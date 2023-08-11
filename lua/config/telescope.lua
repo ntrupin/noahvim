@@ -4,7 +4,7 @@
 local M = {}
 
 -- config
-M.config = function()
+M.setup = function()
   local previewers = require("telescope.previewers")
 
   -- ignore large files and binaries in preview

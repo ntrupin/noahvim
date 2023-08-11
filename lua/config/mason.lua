@@ -3,7 +3,7 @@
 
 local M = {}
 
-M.config = function()
+M.setup = function()
   require("mason").setup({
     ui = {
       icons = {

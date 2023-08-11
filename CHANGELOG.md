@@ -6,6 +6,14 @@ Generated with `git log <target>/<branch>..<branch> --grep="^chore: " --invert-g
 
 ### Version 2023.08.xx.dev
 
+- [46acb2b]: refactor(util): move to funcs
+- [4ad5fb5]: refactor(noahvim): move to ui
+- [b358fa6]: refactor(plugins): move configs to config
+- [b390af0]: refactor(cmds): move to commands
+- [fd1496d]: refactor(plugins): move configs to config
+- [bf83297]: refactor(window): move to util
+- [d80ed34]: refactor(picker): complete move
+- [69712b7]: refactor(picker): move to util
 - [540fe40]: fix(notepad): remove insert mode esc binding
 - [7e57014]: feat(colorschemes): add oxocarbon config
 - [136c135]: feat(notepad): show welcome message on notepad
@@ -20,6 +28,8 @@ Generated with `git log <target>/<branch>..<branch> --grep="^chore: " --invert-g
 - [8b42693]: fix(opts): change split direction
 
 ### Version 2023.08.09
+
+> This update focuses on code quality, filetype rules, and menus.
 
 - [b74c300]: feat(opts): vim indent rules
 - [bd38f8e]: feat(opts): tex indent rules
