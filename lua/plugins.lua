@@ -9,12 +9,12 @@ local plugins = {
   -- appearance
   {
     "sainnhe/everforest", -- colorscheme
-    config = require("configs.colorschemes.everforest").config
+    config = require("config.colorschemes.everforest").config
   },
   { "nvim-tree/nvim-web-devicons" }, -- icons
   {
     "norcalli/nvim-colorizer.lua", -- highlighter
-    config = require("configs.colorizer").config
+    config = require("config.colorizer").config
   },
   {
     "windwp/nvim-autopairs", -- autopairs
@@ -25,38 +25,38 @@ local plugins = {
     "akinsho/bufferline.nvim", -- tab bar
     version = "*",
     dependencies = "nvim-tree/nvim-web-devicons",
-    config = require("configs.bufferline").config
+    config = require("config.bufferline").config
   },
   {
     "nvim-lualine/lualine.nvim", -- statusline
     dependencies = "nvim-tree/nvim-web-devicons",
-    config = require("configs.lualine").config
+    config = require("config.lualine").config
   },
   {
     "rcarriga/nvim-notify", -- notifications
-    config = require("configs.notify").config
+    config = require("config.notify").config
   },
   {
     "lewis6991/gitsigns.nvim",
-    config = require("configs.gitsigns").config
+    config = require("config.gitsigns").config
   },
 
   -- better syntax highlighting
   {
     "nvim-treesitter/nvim-treesitter",
-    config = require("configs.treesitter").config
+    config = require("config.treesitter").config
   },
 
   -- telescope fuzzy finder and associated utils
   {
     "nvim-telescope/telescope.nvim", --telescope
     tag = "0.1.2",
-    config = require("configs.telescope").config
+    config = require("config.telescope").config
   },
   { "nvim-telescope/telescope-file-browser.nvim" },
   {
     "kyazdani42/nvim-tree.lua",
-    config = require("configs.tree").config
+    config = require("config.tree").config
   },
 
   -- lsp
@@ -64,11 +64,11 @@ local plugins = {
   {
     "williamboman/mason.nvim", -- lsp manager
     build = ":MasonUpdate",
-    config = require("configs.mason").config
+    config = require("config.mason").config
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    config = require("configs.masonlsp").config
+    config = require("config.masonlsp").config
   },
   { "hrsh7th/cmp-nvim-lsp" },
   { "hrsh7th/cmp-buffer" },
@@ -76,7 +76,7 @@ local plugins = {
   { "hrsh7th/cmp-cmdline" },
   {
     "hrsh7th/nvim-cmp",
-    config = require("configs.cmp").config
+    config = require("config.cmp").config
   },
   { "L3MON4D3/LuaSnip" },
   { "saadparwaiz1/cmp_luasnip" },
@@ -84,7 +84,7 @@ local plugins = {
   -- writing
   {
     "lervag/vimtex",
-    config = require("configs.vimtex").config,
+    config = require("config.vimtex").config,
     ft = { "plaintex", "tex" }
   }
 }
