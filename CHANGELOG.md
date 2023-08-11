@@ -4,8 +4,12 @@
 
 Generated with `git log <target>/<branch>..<branch> --grep="^chore: " --invert-grep --pretty=format:"- [%h]: %s"`
 
-### Version 2023.08.xx.dev
+### Version 2023.08.xx.alpha
 
+> This update focuses on refactoring project structure and adding user utilities.
+
+- [a192e94]: refactor(plugins): change to setup function
+- [0c3b27f]: refactor(config): change to setup function
 - [46acb2b]: refactor(util): move to funcs
 - [4ad5fb5]: refactor(noahvim): move to ui
 - [b358fa6]: refactor(plugins): move configs to config

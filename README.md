@@ -32,6 +32,7 @@ git clone https://github.com/ntrupin/noahvim ~/.config/nvim
 - Stylish notifications with Notify
 - Color highlighting with Colorizer
 - Git indicators with gitsigns
+- A scratchpad for in-session note-taking.
 
 ## Inspirations
 
