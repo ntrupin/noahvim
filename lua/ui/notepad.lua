@@ -23,6 +23,7 @@ M.launch = function()
     note_win = require("util.window").create({
       buf = note_buf,
       winblend = 30,
+      spell = true
     })
 
     local keymap_opts = {
@@ -32,7 +33,6 @@ M.launch = function()
     vim.keymap.set("n", "<ESC>", M.launch, keymap_opts)
     vim.keymap.set("n", "q", M.launch, keymap_opts)
 
-    vim.opt_local.spell = true
   else
     vim.api.nvim_win_hide(note_win)
   end
