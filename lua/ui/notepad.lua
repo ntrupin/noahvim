@@ -20,25 +20,10 @@ M.launch = function()
       }) -- welcome message
     end
 
-    local height = math.ceil(vim.o.lines * 0.8)
-    local width = math.ceil(vim.o.columns * 0.8)
-
-    -- center window
-    local x = math.ceil((vim.o.columns - width) * 0.5)
-    local y = math.ceil((vim.o.lines - height) * 0.5) - 2
-
-    local win_opts = {
-      border = "rounded",
-      relative = "editor",
-      style = "minimal",
-      width = width,
-      height = height,
-      row = y,
-      col = x
-    }
-
-    note_win = vim.api.nvim_open_win(note_buf, true, win_opts);
-    vim.api.nvim_win_set_option(note_win, "winblend", 30)
+    note_win = require("util.window").create({
+      buf = note_buf,
+      winblend = 30,
+    })
 
     local keymap_opts = {
       silent = true,
