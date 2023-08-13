@@ -4,9 +4,42 @@
 
 Generated with `git log <target>/<branch>..<branch> --grep="^chore: " --invert-grep --pretty=format:"- [%h]: %s"`
 
+### Version 2023.08.13
+
+> This update focuses on refactoring project structure and adding user utilities.
+
+- [7af8a12]: refactor(notepad): move spell to window opts
+- [6135b2e]: refactor(notepad+window): move notepad logic, more opts
+- [f5146dc]: feat(window): allow creation without md file
+- [681e10b]: feat(notepad): add launch keybind
+- [a192e94]: refactor(plugins): change to setup function
+- [0c3b27f]: refactor(config): change to setup function
+- [46acb2b]: refactor(util): move to funcs
+- [4ad5fb5]: refactor(noahvim): move to ui
+- [b358fa6]: refactor(plugins): move configs to config
+- [b390af0]: refactor(cmds): move to commands
+- [fd1496d]: refactor(plugins): move configs to config
+- [bf83297]: refactor(window): move to util
+- [d80ed34]: refactor(picker): complete move
+- [69712b7]: refactor(picker): move to util
+- [540fe40]: fix(notepad): remove insert mode esc binding
+- [7e57014]: feat(colorschemes): add oxocarbon config
+- [136c135]: feat(notepad): show welcome message on notepad
+- [c167414]: feat(tree): actions menu
+- [348f53d]: refactor(notepad): rename scratch
+- [cd5a579]: fix(scratch): exit insert before closing window
+- [d0765b6]: feat(scratch): open into insert mode
+- [c06f464]: feat(tree): remove focus keybind
+- [1e836d8]: feat(window): allow other filetypes
+- [b698707]: fix(window): vertical positioning
+- [fc0b784]: feat: add scratchpad
+- [8b42693]: fix(opts): change split direction
+
 ### Version 2023.08.09
 
-- [b74c300]: feat(ops): vim indent rules
+> This update focuses on code quality, filetype rules, and menus.
+
+- [b74c300]: feat(opts): vim indent rules
 - [bd38f8e]: feat(opts): tex indent rules
 - [f716bca]: fix(dashboard): cursor placement
 - [9fcdbee]: fix: assorted typos

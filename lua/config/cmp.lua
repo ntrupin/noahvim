@@ -8,7 +8,7 @@ local function filter_text(entry, _)
   return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= "Text"
 end
 
-M.config = function()
+M.setup = function()
   local cmp = require("cmp")
 
   cmp.setup({

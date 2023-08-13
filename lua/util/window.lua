@@ -4,7 +4,7 @@
 local M = {}
 
 -- reference https://github.com/theopn/theovim/blob/35211730161a6c8a8521f81b325dbc0774dc49d9/lua/theovim/theovim_cmd.lua
-M.create_with_md_file = function(filepath, opts)
+M.create = function(opts)
   opts = opts or {}
 
   local height_mul = opts.height or 0.8
@@ -15,9 +15,9 @@ M.create_with_md_file = function(filepath, opts)
 
   -- center window
   local x = math.ceil((vim.o.columns - width) * 0.5)
-  local y = math.ceil((vim.o.lines - height) * 0.5)
+  local y = math.ceil((vim.o.lines - height) * 0.5) - 2
 
-  local win_opts = {
+  local win_opts = opts.win_opts or {
     border = "rounded",
     relative = "editor",
     style = "minimal",
@@ -28,13 +28,16 @@ M.create_with_md_file = function(filepath, opts)
   }
 
   -- create buffer
-  local buf = vim.api.nvim_create_buf(false, true) -- unlisted, scratch
+  local buf = opts.buf or vim.api.nvim_create_buf(false, true) -- unlisted, scratch
   local win = vim.api.nvim_open_win(buf, true, win_opts)
 
-  vim.api.nvim_buf_set_option(buf, "bufhidden", "wipe") -- wipe buffer on hide
-  vim.api.nvim_buf_set_option(buf, "filetype", "markdown") -- markdown file
-  vim.opt_local.spell = false
-  vim.api.nvim_win_set_option(win, "winblend", 0) -- solid
+  if opts.buf == nil then
+    vim.api.nvim_buf_set_option(buf, "bufhidden", "wipe") -- wipe buffer on hide
+    vim.api.nvim_buf_set_option(buf, "filetype", opts.filetype or "markdown") -- markdown file
+  end
+
+  vim.opt_local.spell = opts.spell or false
+  vim.api.nvim_win_set_option(win, "winblend", opts.winblend or 0) -- solid
 
   -- keymaps (exit on quit or escape)
   local keymap_opts = {
@@ -48,9 +51,13 @@ M.create_with_md_file = function(filepath, opts)
 
   -- read file
   -- https://www.reddit.com/r/neovim/comments/s97tja/opening_an_existing_file_in_a_floating_window/
-  vim.api.nvim_buf_set_option(0, "modifiable", true)
-  vim.cmd("silent 0r" .. filepath)
-  vim.api.nvim_buf_set_option(0, "modifiable", false)
+  if opts.filepath ~= nil then
+    vim.api.nvim_buf_set_option(0, "modifiable", true)
+    vim.cmd("silent 0r" .. opts.filepath)
+    vim.api.nvim_buf_set_option(0, "modifiable", false)
+  end
+
+  return win
 end
 
 return M

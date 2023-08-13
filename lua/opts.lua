@@ -27,7 +27,7 @@ do
     ignorecase = true,
     smartcase = true,
     -- split pane
-    splitright = false,
+    splitright = true,
     splitbelow = true,
     -- appearance
     mouse = "a",

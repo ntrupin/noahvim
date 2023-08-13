@@ -3,7 +3,7 @@
 
 local M = {}
 
-M.config = function()
+M.setup = function()
   vim.g.tex_flavor = "latex"
 end
 

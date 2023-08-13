@@ -39,12 +39,13 @@ local keybinds = {
   { "n", "<leader>cr", function() vim.lsp.buf.rename() end, "[c]ode [r]ename: rename entity" },
 
   -- menus
-  { "n", "<leader>m", require("noahvim.cmds").noahvim_menu, "[m]enu: show menu" },
-  { "n", "<leader>g", require("noahvim.cmds").git_menu, "[g]it menu: show git menu" },
-  { "n", "<leader>z", require("noahvim.cmds").term_menu, "[z]sh menu: show term menu" },
+  { "n", "<leader>m", require("commands").noahvim_menu, "[m]enu: show menu" },
+  { "n", "<leader>g", require("commands").git_menu, "[g]it menu: show git menu" },
+  { "n", "<leader>z", require("commands").term_menu, "[z]sh menu: show term menu" },
+  { "n", "<leader>np", require("ui.notepad").launch, "[n]ote[p]ad: launch notepad" },
 
-  table.unpack(require("configs.tree").keybinds),
-  table.unpack(require("configs.telescope").keybinds)
+  table.unpack(require("config.tree").keybinds),
+  table.unpack(require("config.telescope").keybinds)
 }
 
 -- set keybinds

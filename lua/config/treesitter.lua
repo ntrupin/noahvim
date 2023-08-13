@@ -3,7 +3,7 @@
 
 local M = {}
 
-M.config = function()
+M.setup = function()
   local treesitter = require("nvim-treesitter.configs")
 
   treesitter.setup({

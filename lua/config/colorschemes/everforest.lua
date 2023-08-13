@@ -3,7 +3,7 @@
 
 local M = {}
 
-M.config = function()
+M.setup = function()
   vim.opt.background = "dark"
   vim.g.everforest_background = "hard"
   vim.g.everforest_better_performance = 1

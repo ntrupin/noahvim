@@ -3,7 +3,7 @@
 
 local M = {}
 
-M.config = function()
+M.setup = function()
   require("bufferline").setup({
     options = {
       -- show buffer id

@@ -7,7 +7,7 @@ local servers = {
   "bashls", "clangd", "lua_ls", "pyright", "texlab"
 }
 
-M.config = function()
+M.setup = function()
   local mlsp = require("mason-lspconfig")
   local lsp = require("lspconfig")
 
@@ -18,7 +18,7 @@ M.config = function()
     automatic_installation = true,
     handlers = {
       function(server_name)
-        lsp[server_name].setup({ 
+        lsp[server_name].setup({
           capabilities = capabilities
         })
       end,
