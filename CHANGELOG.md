@@ -4,10 +4,14 @@
 
 Generated with `git log <target>/<branch>..<branch> --grep="^chore: " --invert-grep --pretty=format:"- [%h]: %s"`
 
-### Version 2023.08.xx.alpha
+### Version 2023.08.13
 
 > This update focuses on refactoring project structure and adding user utilities.
 
+- [7af8a12]: refactor(notepad): move spell to window opts
+- [6135b2e]: refactor(notepad+window): move notepad logic, more opts
+- [f5146dc]: feat(window): allow creation without md file
+- [681e10b]: feat(notepad): add launch keybind
 - [a192e94]: refactor(plugins): change to setup function
 - [0c3b27f]: refactor(config): change to setup function
 - [46acb2b]: refactor(util): move to funcs
