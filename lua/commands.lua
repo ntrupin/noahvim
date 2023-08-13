@@ -53,7 +53,7 @@ vim.api.nvim_create_user_command("NoahvimTerm", M.term_menu, { nargs = 0 })
 -- create window helper
 M.create_window_from_file = function(filename)
   local keymapsdoc = vim.api.nvim_get_runtime_file(filename, false)[1]
-  return require("util.window").create_with_md_file(keymapsdoc)
+  return require("util.window").create({ filepath = keymapsdoc })
 end
 
 -- show help window + command

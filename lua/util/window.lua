@@ -4,7 +4,7 @@
 local M = {}
 
 -- reference https://github.com/theopn/theovim/blob/35211730161a6c8a8521f81b325dbc0774dc49d9/lua/theovim/theovim_cmd.lua
-M.create_with_md_file = function(filepath, opts)
+M.create = function(opts)
   opts = opts or {}
 
   local height_mul = opts.height or 0.8
@@ -15,7 +15,7 @@ M.create_with_md_file = function(filepath, opts)
 
   -- center window
   local x = math.ceil((vim.o.columns - width) * 0.5)
-  local y = math.ceil((vim.o.lines - height) * 0.5) - 1
+  local y = math.ceil((vim.o.lines - height) * 0.5) - 2
 
   local win_opts = {
     border = "rounded",
@@ -48,9 +48,11 @@ M.create_with_md_file = function(filepath, opts)
 
   -- read file
   -- https://www.reddit.com/r/neovim/comments/s97tja/opening_an_existing_file_in_a_floating_window/
-  vim.api.nvim_buf_set_option(0, "modifiable", true)
-  vim.cmd("silent 0r" .. filepath)
-  vim.api.nvim_buf_set_option(0, "modifiable", false)
+  if opts.filepath ~= nil then
+    vim.api.nvim_buf_set_option(0, "modifiable", true)
+    vim.cmd("silent 0r" .. opts.filepath)
+    vim.api.nvim_buf_set_option(0, "modifiable", false)
+  end
 end
 
 return M
