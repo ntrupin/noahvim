@@ -11,3 +11,6 @@ require("commands")
 
 -- setup dashboard
 require("ui.dashboard").setup()
+
+-- setup theme picker
+require("ui.colorschemes")
