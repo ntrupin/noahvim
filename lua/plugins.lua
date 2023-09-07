@@ -7,9 +7,13 @@ local plugins = {
   { "nvim-lua/plenary.nvim" },
 
   -- appearance
-  {
+  --[[{
     "sainnhe/everforest", -- colorscheme
     config = require("config.colorschemes.everforest").setup
+  },]]--
+  {
+    "nyoom-engineering/oxocarbon.nvim",
+    config = require("config.colorschemes.oxocarbon").setup
   },
   { "nvim-tree/nvim-web-devicons" }, -- icons
   {
@@ -27,11 +31,11 @@ local plugins = {
     dependencies = "nvim-tree/nvim-web-devicons",
     config = require("config.bufferline").setup
   },
-  {
+  --[[{
     "nvim-lualine/lualine.nvim", -- statusline
     dependencies = "nvim-tree/nvim-web-devicons",
     config = require("config.lualine").setup
-  },
+  },]]--
   {
     "rcarriga/nvim-notify", -- notifications
     config = require("config.notify").setup
