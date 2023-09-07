@@ -7,13 +7,9 @@ local plugins = {
   { "nvim-lua/plenary.nvim" },
 
   -- appearance
-  --[[{
-    "sainnhe/everforest", -- colorscheme
-    config = require("config.colorschemes.everforest").setup
-  },]]--
   {
-    "nyoom-engineering/oxocarbon.nvim",
-    config = require("config.colorschemes.oxocarbon").setup
+    "sonokai/everforest",
+    config = require("config.colorschemes.everforest").setup
   },
   { "nvim-tree/nvim-web-devicons" }, -- icons
   {
