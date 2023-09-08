@@ -107,4 +107,31 @@ M.fenc = function()
   return string.format("%s%s", enc, ff):upper()
 end
 
+-- from theopn/theovim
+M.lsp_status = function()
+  if #(vim.lsp.get_active_clients()) == 0 then
+    return ""
+  end
+
+  local count = {}
+  local levels = {
+    errors = "Error",
+    warnings = "Warn",
+    info = "Info",
+    hints = "Hint",
+  }
+  for k, level in pairs(levels) do
+    count[k] = #(vim.diagnostic.get(0, { severity = level })) --> 0 for current buf
+  end
+
+  local errors = count["errors"] > 0 and count["errors"] .. " " or ""
+  local warnings = count["warnings"] > 0 and (count["warnings"] .. " ") or ""
+  local hints = count["hints"] > 0 and (count["hints"] .. "? ") or ""
+  local info = count["info"] > 0 and count["info"] .. "i " or ""
+
+  return string.format("%s%s%s%s",
+    ("%#NoahvimRed#" .. errors), ("%#NoahvimYellow#" .. warnings),
+    ("%#NoahvimGrey#" .. hints), ("%#NoahvimBlue#" .. info))
+end
+
 return M

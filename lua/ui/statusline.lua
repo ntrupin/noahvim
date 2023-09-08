@@ -7,7 +7,7 @@ local components = require("ui.components")
 
 Statusline.highlights = require("util.highlights")
 
-Statusline.build = function()
+Statuslin.build = function()
 
   local ficon, fcolor = components.file_icon(vim.bo.filetype)
 
@@ -33,6 +33,9 @@ Statusline.build = function()
     -- Spacer
     "%#NoahvimDefaultBG#",
     "%=",
+
+    -- LSP
+    components.lsp_status(),
 
     -- File information
     "%#NoahvimGrey#",
