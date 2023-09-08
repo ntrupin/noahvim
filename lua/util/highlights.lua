@@ -32,7 +32,17 @@ M.highlights = {
   NoahvimGreen = {fg = palette.green[1]},
   NoahvimBlue = {fg = palette.blue[1] },
   NoahvimPurple = {fg = palette.purple[1]},
-  NoahvimGrey = {fg = palette.grey0[1]}
+  NoahvimGrey = {fg = palette.grey0[1]},
+  NoahvimLightGrey = {fg = palette.grey1[1]},
+
+  NoahvimRedBold = {fg = palette.red[1], bold = true},
+  NoahvimOrangeBold = {fg = palette.orange[1], bold = true},
+  NoahvimYellowBold = {fg = palette.yellow[1], bold = true},
+  NoahvimGreenBold = {fg = palette.green[1], bold = true},
+  NoahvimBlueBold = {fg = palette.blue[1], bold = true},
+  NoahvimPurpleBold = {fg = palette.purple[1], bold = true},
+  NoahvimGreyBold = {fg = palette.grey0[1], bold = true},
+  NoahvimLightGreyBold = {fg = palette.grey1[1], bold = true},
 }
 
 M.setup = function()
