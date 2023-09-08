@@ -63,7 +63,6 @@ M.file_icon = function(filetype)
   })
 
   if vim.fn["hlexists"](hlname) == 0 then
-    print("HERE")
     highlights.create_highlight(hlname, {
       fg = color,
       bold = true
