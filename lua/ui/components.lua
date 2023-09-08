@@ -84,7 +84,7 @@ M.git_status = function()
     and string.format(" %%#NoahvimGreen#+%s", stat.added)
     or ""
   local changed = (stat.changed and stat.changed ~= 0)
-    and string.format(" %%#NoahvimYellow#~%s ", stat.changed)
+    and string.format(" %%#NoahvimYellow#~%s", stat.changed)
     or ""
   local removed = (stat.removed and stat.removed ~= 0)
     and string.format(" %%#NoahvimRed#-%s", stat.removed)

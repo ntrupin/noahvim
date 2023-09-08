@@ -7,7 +7,7 @@ local components = require("ui.components")
 
 Statusline.highlights = require("util.highlights")
 
-Statuslin.build = function()
+Statusline.build = function()
 
   local ficon, fcolor = components.file_icon(vim.bo.filetype)
 
