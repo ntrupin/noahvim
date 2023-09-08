@@ -26,7 +26,8 @@ M.mode = function()
     ['rm'] = 'MORE',
     ['r?'] = 'CONFIRM',
     ['!']  = 'SHELL',
-    ["t"] = "TERMINAL"
+    ["t"] = "TERMINAL",
+    ["nt"] = "NORMAL"
   }
 
   local current = vim.api.nvim_get_mode().mode
@@ -37,7 +38,7 @@ M.mode_color = function()
   local current = vim.api.nvim_get_mode().mode
   local color = "%#NoahvimInactive#"
 
-  if current == "n" or current == "no" then
+  if current == "n" or current == "no" or current == "nt" then
     color = "%#NoahvimNormal#"
   elseif current == "i" then
     color = "%#NoahvimInsert#"
@@ -64,7 +65,8 @@ M.file_icon = function(filetype)
   if vim.fn["hlexists"](hlname) == 0 then
     print("HERE")
     highlights.create_highlight(hlname, {
-      fg = color
+      fg = color,
+      bold = true
     })
   end
 
