@@ -1,0 +1,110 @@
+-- components.lua
+-- custom UI components
+
+local M = {}
+
+local highlights = require("util.highlights")
+local devicons = require("nvim-web-devicons")
+
+M.mode = function()
+  local modes = {
+    ['n']  = 'NORMAL',
+    ['no'] = 'OP-PENDING',
+    ['v']  = 'VISUAL',
+    ['V']  = 'V-LINE',
+    [''] = 'V-BLOCK',
+    ['s']  = 'SELECT',
+    ['S']  = 'S-LINE',
+    [''] = 'S-BLOCK',
+    ['i']  = 'INSERT',
+    ['R']  = 'REPLACE',
+    ['Rv'] = 'V-REPLACE',
+    ['c']  = 'COMMAND',
+    ['cv'] = 'VIM EX',
+    ['ce'] = 'EX',
+    ['r']  = 'PROMPT',
+    ['rm'] = 'MORE',
+    ['r?'] = 'CONFIRM',
+    ['!']  = 'SHELL',
+    ["t"] = "TERMINAL"
+  }
+
+  local current = vim.api.nvim_get_mode().mode
+  return string.format(" %s ", modes[current] or current):upper()
+end
+
+M.mode_color = function()
+  local current = vim.api.nvim_get_mode().mode
+  local color = "%#NoahvimInactive#"
+
+  if current == "n" or current == "no" then
+    color = "%#NoahvimNormal#"
+  elseif current == "i" then
+    color = "%#NoahvimInsert#"
+  elseif current == "v" or current == "V" or current == "" then
+    color = "%#NoahvimVisual#"
+  elseif current == "c" then
+    color = "%#NoahvimCommand#"
+  elseif current == "R" or current == "Rv" then
+    color = "%#NoahvimReplace#"
+  elseif current == "t" then
+    color = "%#NoahvimTerminal#"
+  end
+
+  return color
+end
+
+M.file_icon = function(filetype)
+  local hlname = "Noahvim_" .. filetype
+
+  local icon, color = devicons.get_icon_color_by_filetype(filetype, {
+    default = true
+  })
+
+  if vim.fn["hlexists"](hlname) == 0 then
+    print("HERE")
+    highlights.create_highlight(hlname, {
+      fg = color
+    })
+  end
+
+  return icon or "", hlname or "NoahvimGrey"
+end
+
+-- from theopn/theovim
+M.git_status = function()
+  if not vim.b.gitsigns_head or vim.b.gitsigns_git_status then
+    return ""
+  end
+
+  local stat = vim.b.gitsigns_status_dict
+
+  local branch = string.format(" %s", stat.head)
+  local added = (stat.added and stat.added ~= 0)
+    and string.format(" %%#NoahvimGreen#+%s", stat.added)
+    or ""
+  local changed = (stat.changed and stat.changed ~= 0)
+    and string.format(" %%#NoahvimYellow#~%s ", stat.changed)
+    or ""
+  local removed = (stat.removed and stat.removed ~= 0)
+    and string.format(" %%#NoahvimRed#-%s", stat.removed)
+    or ""
+
+  return string.format("  %s%s%s%s", branch, added, changed, removed)
+end
+
+-- from theopn/theovim
+M.fenc = function()
+  local ff = vim.bo.fileformat
+  if ff == "unix" then
+    ff = "  "
+  elseif ff == "dos" then
+    ff = "  "
+  end
+
+  -- if file does not have encoding, display global encoding
+  local enc = vim.bo.fileencoding == "" and vim.o.encoding or vim.bo.fileencoding
+  return string.format("%s%s", enc, ff):upper()
+end
+
+return M
