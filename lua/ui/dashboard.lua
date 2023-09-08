@@ -7,7 +7,8 @@ local M = {}
 local header = {
   [[     _      _      _      ]],
   [[   >(.)__ <(.)__ =(.)__   ]],
-  [[    (___/  (___/  (___/   ]]
+  [[    (___/  (___/  (___/   ]],
+  [[ -------/\-----/\-----/\- ]]
 }
 
 local logo = {
@@ -108,11 +109,15 @@ local render = function()
 
   vim.api.nvim_buf_set_lines(buf, 0, -1, false, result)
 
+  -- highlight
+  for i = hdr_start_idx, hdr_start_idx + #header - 3 do
+    vim.api.nvim_buf_add_highlight(buf, -1, "NoahvimYellowBold", i, 0, -1)
+  end
+  vim.api.nvim_buf_add_highlight(buf, -1, "NoahvimBlueBold", hdr_start_idx + (#header - 3), 0, -1)
+
   -- set cursor to first char
   local cursor_column_idx = (width > min_width) and (math.floor(width / 2) - 15) or 0
   vim.api.nvim_win_set_cursor(0, { hdr_start_idx + #header + #logo, cursor_column_idx })
-
-  -- keybinds
 
   -- button locations
   local curr_btn_line = hdr_start_idx + #header + #logo + 2
@@ -152,6 +157,7 @@ local render = function()
     end
   end
 
+  -- keybinds
   vim.keymap.set("n", "h", "<NOP>", { buffer = true })
   vim.keymap.set("n", "j", moveDown, { buffer = true })
   vim.keymap.set("n", "k", moveUp, { buffer = true })
