@@ -4,6 +4,23 @@
 
 Generated with `git log <target>/<branch>..<branch> --grep="^chore: " --invert-grep --pretty=format:"- [%h]: %s"`
 
+### Version 2023.09.xx
+
+> This version focuses on implementing custom components instead of relying on plugins.
+
+- [64a656d]: feat: implement custom statusline
+- [ab92ba7]: refactor: move statusline components to separate file
+- [d09bc0e]: feat: add custom highlights
+- [95f0fec]: fix(plugins): fix colorscheme author
+- [0dcc67e]: feat(util): add highlights
+- [da77276]: feat(opts): set noshowmode
+- [5d308e6]: feat(plugins): revert colorscheme
+- [bf87d2a]: feat(colorschemes): add onedarkpro colorscheme
+- [7165f92]: feat(plugins): switch to oxocarbon theme
+- [f2b0e38]: feat(colorschemes): patch oxocarbon comment font color
+- [80019b8]: feat(colorschemes): picker (incomplete)
+- [5e94874]: feat(colorschemes): add index file
+
 ### Version 2023.08.13
 
 > This update focuses on refactoring project structure and adding user utilities.
