@@ -8,7 +8,7 @@ local plugins = {
 
   -- appearance
   {
-    "sonokai/everforest",
+    "sainnhe/everforest",
     config = require("config.colorschemes.everforest").setup
   },
   { "nvim-tree/nvim-web-devicons" }, -- icons
