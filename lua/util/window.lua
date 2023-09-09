@@ -14,8 +14,8 @@ M.create = function(opts)
   local width = math.ceil(vim.o.columns * width_mul)
 
   -- center window
-  local x = math.ceil((vim.o.columns - width) * 0.5)
-  local y = math.ceil((vim.o.lines - height) * 0.5) - 2
+  local x = opts.x or (math.ceil((vim.o.columns - width) * 0.5))
+  local y = opts.y or (math.ceil((vim.o.lines - height) * 0.5) - 2)
 
   local win_opts = opts.win_opts or {
     border = "rounded",
