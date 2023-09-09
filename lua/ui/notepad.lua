@@ -22,6 +22,10 @@ M.launch = function()
 
     note_win = require("util.window").create({
       buf = note_buf,
+      width = 0.5,
+      height = 0.5,
+      x = math.ceil(vim.o.columns * 0.5),
+      y = 0,
       winblend = 30,
       spell = true
     })
