@@ -40,9 +40,9 @@ Statusline.build = function()
     -- File information
     "%#NoahvimGrey#",
     components.fenc(),
-    "%#" .. fcolor .. "#",
+    " %#" .. fcolor .. "#",
     ficon,
-    " %Y ",
+    " %Y  ",
 
     -- Location in the file
     components.mode_color(),
