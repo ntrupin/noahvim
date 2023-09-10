@@ -38,7 +38,7 @@ Statusline.build = function()
     components.lsp_status(),
 
     -- File information
-    "%#NoahvimGrey#",
+    " %#NoahvimGrey#",
     components.fenc(),
     " %#" .. fcolor .. "#",
     ficon,
