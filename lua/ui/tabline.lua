@@ -23,8 +23,6 @@ Tabline.build = function()
     components.nvimtree_spacer(),
 
     "%#NoahvimDefaultBG#",
-    -- name
-    " Noahvim 󰇥",
 
     "%=",
     -- LSP
