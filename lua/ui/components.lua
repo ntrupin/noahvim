@@ -146,7 +146,7 @@ M.nvimtree_spacer = function()
     tree_spacer = string.format("%%#NvimTreeNormal#%s%s%s%%#NvimTreeWinSeparator#│",
       space,
       tree_title,
-      string.sub(space, 1, string.len(space))
+      string.sub(space, 1, string.len(space) - 1)
     )
   end
 
