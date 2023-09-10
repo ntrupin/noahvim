@@ -15,8 +15,10 @@ require("util.highlights").setup()
 -- setup dashboard
 require("ui.dashboard").setup()
 
--- setup statusline
+-- setup lines
+require("ui.tabline").setup()
 require("ui.statusline").setup()
+
 
 -- setup theme picker
 require("ui.colorschemes")
