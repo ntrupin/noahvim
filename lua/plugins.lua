@@ -21,12 +21,12 @@ local plugins = {
     event = "InsertEnter",
     opts = {}
   },
-  {
+  --[[{
     "akinsho/bufferline.nvim", -- tab bar
     version = "*",
     dependencies = "nvim-tree/nvim-web-devicons",
     config = require("config.bufferline").setup
-  },
+  },]]--
   --[[{
     "nvim-lualine/lualine.nvim", -- statusline
     dependencies = "nvim-tree/nvim-web-devicons",
