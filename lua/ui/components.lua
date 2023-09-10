@@ -5,6 +5,8 @@ local M = {}
 
 local highlights = require("util.highlights")
 local devicons = require("nvim-web-devicons")
+local tree = require("nvim-tree").config
+local tree_api = require("nvim-tree.api").tree
 
 M.mode = function()
   local modes = {
@@ -133,6 +135,22 @@ M.lsp_status = function()
   return string.format("%s%s%s%s",
     ("%#NoahvimRed#" .. errors), ("%#NoahvimYellow#" .. warnings),
     ("%#NoahvimGrey#" .. hints), ("%#NoahvimBlue#" .. info))
+end
+
+M.nvimtree_spacer = function()
+  local tree_title = "File Explorer"
+
+  local tree_spacer = ""
+  if tree_api.is_visible() then
+    local space = string.rep(" ", math.ceil((tree.view.width / 2) - (string.len(tree_title) / 2)))
+    tree_spacer = string.format("%%#NvimTreeNormal#%s%s%s%%#NvimTreeWinSeparator#│",
+      space,
+      tree_title,
+      string.sub(space, 1, string.len(space))
+    )
+  end
+
+  return tree_spacer
 end
 
 return M
