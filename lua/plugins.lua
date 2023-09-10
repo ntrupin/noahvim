@@ -8,7 +8,7 @@ local plugins = {
 
   -- appearance
   {
-    "sainnhe/everforest", -- colorscheme
+    "sainnhe/everforest",
     config = require("config.colorschemes.everforest").setup
   },
   { "nvim-tree/nvim-web-devicons" }, -- icons
@@ -21,17 +21,17 @@ local plugins = {
     event = "InsertEnter",
     opts = {}
   },
-  {
+  --[[{
     "akinsho/bufferline.nvim", -- tab bar
     version = "*",
     dependencies = "nvim-tree/nvim-web-devicons",
     config = require("config.bufferline").setup
-  },
-  {
+  },]]--
+  --[[{
     "nvim-lualine/lualine.nvim", -- statusline
     dependencies = "nvim-tree/nvim-web-devicons",
     config = require("config.lualine").setup
-  },
+  },]]--
   {
     "rcarriga/nvim-notify", -- notifications
     config = require("config.notify").setup

@@ -64,7 +64,9 @@ do
     relativenumber = true,
     numberwidth = 3,
     cursorline = true,
-    cursorcolumn = true
+    cursorcolumn = true,
+    -- misc
+    showmode = false,
   }
 
   set_opts(opinionated)
