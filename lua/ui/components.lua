@@ -3,7 +3,7 @@
 
 local M = {}
 
-local highlights = require("util.highlights")
+local highlights = require("util.highlights.catppuccin")
 local devicons = require("nvim-web-devicons")
 local tree = require("nvim-tree").config
 local tree_api = require("nvim-tree.api").tree
