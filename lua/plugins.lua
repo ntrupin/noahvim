@@ -7,9 +7,15 @@ local plugins = {
   { "nvim-lua/plenary.nvim" },
 
   -- appearance
-  {
+  --[[{
     "sainnhe/everforest",
     config = require("config.colorschemes.everforest").setup
+  },]]--
+  { 
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = require("config.colorschemes.catppuccin").setup
   },
   { "nvim-tree/nvim-web-devicons" }, -- icons
   {
