@@ -20,7 +20,6 @@ Statusline.build = function()
     "%#NoahvimGrey#",
     components.git_status(),
 
-    -- folder, file name, and status
     "%#NoahvimGrey# ",
     -- File info
     "  ",
