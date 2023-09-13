@@ -13,16 +13,16 @@ end
 M.highlights = {
   NoahvimDefaultBG = {bg = palette.base},
 
-  NoahvimNormal = {bg = palette.green, fg = palette.text, bold = true},
-  NoahvimInsert = {bg = palette.peach, fg = palette.text, bold = true},
-  NoahvimVisual = {bg = palette.red, fg = palette.text, bold = true},
-  NoahvimReplace = {bg = palette.yellow, fg = palette.text, bold = true},
-  NoahvimCommand = {bg = palette.sapphire, fg = palette.text, bold = true},
-  NoahvimTerminal = {bg = palette.lavender, fg = palette.text, bold = true},
-  NoahvimInactive = {bg = palette.subtext0, fg = palette.text, bold = true},
+  NoahvimNormal = {bg = palette.green, fg = palette.crust, bold = true},
+  NoahvimInsert = {bg = palette.rosewater, fg = palette.crust, bold = true},
+  NoahvimVisual = {bg = palette.red, fg = palette.crust, bold = true},
+  NoahvimReplace = {bg = palette.yellow, fg = palette.crust, bold = true},
+  NoahvimCommand = {bg = palette.sapphire, fg = palette.crust, bold = true},
+  NoahvimTerminal = {bg = palette.lavender, fg = palette.crust, bold = true},
+  NoahvimInactive = {bg = palette.subtext0, fg = palette.crust, bold = true},
 
   NoahvimNormalInverse = {fg = palette.green, bold = true},
-  NoahvimInsertInverse = {fg = palette.peach, bold = true},
+  NoahvimInsertInverse = {fg = palette.rosewater, bold = true},
   NoahvimVisualInverse = {fg = palette.red, bold = true},
   NoahvimReplaceInverse = {fg = palette.yellow, bold = true},
   NoahvimCommandInverse = {fg = palette.sapphire, bold = true},
@@ -30,6 +30,7 @@ M.highlights = {
   NoahvimInactiveInverse = {fg = palette.subtext0, bold = true},
 
   NoahvimRed = {fg = palette.red},
+  NoahvimOrange = {fg = palette.peach},
   NoahvimYellow = {fg = palette.yellow},
   NoahvimGreen = {fg = palette.green},
   NoahvimBlue = {fg = palette.blue},
@@ -38,6 +39,7 @@ M.highlights = {
   NoahvimLightGrey = {fg = palette.subtext1},
 
   NoahvimRedBold = {fg = palette.red, bold = true},
+  NoahvimOrangeBold = {fg = palette.peach, bold = true},
   NoahvimYellowBold = {fg = palette.yellow, bold = true},
   NoahvimGreenBold = {fg = palette.green, bold = true},
   NoahvimBlueBold = {fg = palette.blue, bold = true},
