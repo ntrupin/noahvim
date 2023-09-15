@@ -111,7 +111,7 @@ local render = function()
   vim.api.nvim_buf_set_lines(buf, 0, -1, false, result)
 
   -- highlight
-  
+
   -- ducks
   for i = hdr_start_idx, hdr_start_idx + #header - 3 do
     vim.api.nvim_buf_add_highlight(buf, -1, "NoahvimYellowBold", i, 0, -1)
@@ -122,7 +122,7 @@ local render = function()
 
   -- name
   for i = hdr_start_idx + #header - 2, hdr_start_idx + #header + #logo - 5 do
-    vim.api.nvim_buf_add_highlight(buf, -1, "NoahvimGreenBold", i, 0, -1)
+    vim.api.nvim_buf_add_highlight(buf, -1, "NoahvimRedBold", i, 0, -1)
   end
 
 

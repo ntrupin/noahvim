@@ -1,4 +1,4 @@
--- highlights.lua
+-- highlights/everforest.lua
 -- custom highlights
 -- inspired by theopn/theovim and sainnhe/everforest
 
@@ -25,6 +25,15 @@ M.highlights = {
   NoahvimCommand = {bg = palette.aqua[1], fg = palette.bg0[1], bold = true},
   NoahvimTerminal = {bg = palette.purple[1], fg = palette.bg0[1], bold = true},
   NoahvimInactive = {bg = palette.bg1[1], fg = palette.grey1[1], bold = true},
+
+
+  NoahvimNormalInverse = {fg = palette.statusline1[1], bold = true},
+  NoahvimInsertInverse = {fg = palette.statusline2[1], bold = true},
+  NoahvimVisualInverse = {fg = palette.statusline3[1], bold = true},
+  NoahvimReplaceInverse = {fg = palette.orange[1], bold = true},
+  NoahvimCommandInverse = {fg = palette.aqua[1], bold = true},
+  NoahvimTerminalInverse = {fg = palette.purple[1], bold = true},
+  NoahvimInactiveInverse = {fg = palette.bg1[1], bold = true},
 
   NoahvimRed = {fg = palette.red[1]},
   NoahvimOrange = {fg = palette.orange[1]},

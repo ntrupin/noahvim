@@ -4,7 +4,26 @@
 
 Generated with `git log <target>/<branch>..<branch> --grep="^chore: " --invert-grep --pretty=format:"- [%h]: %s"`
 
-### Version 2023.09.xx
+### Version 2023.09.14
+
+> This version focuses on refining custom components and implementing some functionality in C.
+
+- [63e2937]: fix(highlights): switch darken_hex_color to bit32
+- [a29275b]: feat: add C ffi && bit32 bridge
+- [1fc161f]: feat: add bit32 C library
+- [00966e4]: feat(dashboard): change name color
+- [c789f2b]: feat(catppuccin): override colors
+- [c2c9c2b]: feat(highlights): tweak catppuccin
+- [75abf9e]: feat(colorschemes): new colorscheme config
+- [f697b39]: feat(plugins): new colorscheme
+- [4d75919]: refactor(statusline): change colorscheme
+- [6c4c8dc]: refactor(highlights): separate by theme
+- [869e680]: refactor(init): change highlight group
+- [3921915]: feat(highlights): add inverse mode colors
+- [44d802f]: chore(statusline): remove irrelevant comment
+- [aad19e2]: feat(statusline): add more modes
+
+### Version 2023.09.10
 
 > This version focuses on implementing custom components instead of relying on plugins.
 

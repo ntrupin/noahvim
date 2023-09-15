@@ -5,22 +5,23 @@ Statusline = {}
 
 local components = require("ui.components")
 
-Statusline.highlights = require("util.highlights")
-
 Statusline.build = function()
 
   local ficon, fcolor = components.file_icon(vim.bo.filetype)
 
+  local mode_color = components.mode_color()
+
   return table.concat({
     -- Mode
-    components.mode_color(),
+    mode_color,
     components.mode(),
+    mode_color:gsub("#$", "Inverse#"),
+    "",
 
     -- Git Status
     "%#NoahvimGrey#",
     components.git_status(),
 
-    -- folder, file name, and status
     "%#NoahvimGrey# ",
     -- File info
     "  ",

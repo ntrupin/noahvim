@@ -23,6 +23,12 @@ Tabline.build = function()
     components.nvimtree_spacer(),
 
     "%#NoahvimDefaultBG#",
+    "%#NoahvimGrey#",
+
+    -- file info
+    "  ",
+    " %{expand('%:~:.')}",
+    " %m",
 
     "%=",
     -- LSP

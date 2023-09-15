@@ -10,7 +10,7 @@ require("plugins")
 require("commands")
 
 -- setup highlights
-require("util.highlights").setup()
+require("util.highlights.catppuccin").setup()
 
 -- setup dashboard
 require("ui.dashboard").setup()
