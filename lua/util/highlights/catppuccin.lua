@@ -5,6 +5,7 @@
 local M = {}
 
 local palette = require("catppuccin.palettes").get_palette("mocha")
+local funcs = require("util.funcs")
 
 M.create_highlight = function(group, properties)
   vim.api.nvim_set_hl(0, group, properties)
@@ -49,6 +50,24 @@ M.highlights = {
 }
 
 M.setup = function()
+  vim.g.terminal_color_0 = palette.base
+  vim.g.terminal_color_1 = funcs.darken_hex_color(palette.red)
+  vim.g.terminal_color_2 = funcs.darken_hex_color(palette.green)
+  vim.g.terminal_color_3 = funcs.darken_hex_color(palette.yellow)
+  vim.g.terminal_color_4 = funcs.darken_hex_color(palette.blue)
+  vim.g.terminal_color_5 = funcs.darken_hex_color(palette.lavender)
+  vim.g.terminal_color_6 = funcs.darken_hex_color(palette.teal)
+  vim.g.terminal_color_7 = funcs.darken_hex_color(palette.text)
+
+  vim.g.terminal_color_8 = palette.base
+  vim.g.terminal_color_9 = palette.red
+  vim.g.terminal_color_10 = palette.green
+  vim.g.terminal_color_11 = palette.yellow
+  vim.g.terminal_color_12 = palette.blue
+  vim.g.terminal_color_13 = palette.lavender
+  vim.g.terminal_color_14 = palette.teal
+  vim.g.terminal_color_15 = palette.text
+
   for group, properties in pairs(M.highlights) do
     M.create_highlight(group, properties)
   end
