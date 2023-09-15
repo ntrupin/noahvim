@@ -48,8 +48,6 @@ M.darken_hex_color = function(color)
   -- convert back to string
   color = string.format("#%X", number)
 
-  vim.notify(color)
-
   return color
 end
 
