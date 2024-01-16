@@ -8,9 +8,9 @@ M.setup = function()
     flavour = "mocha",
     color_overrides = {
       mocha = {
-        base = "#000000",
-        mantle = "#000000",
-        crust = "#000000"
+        base = "#152029",
+        mantle = "#152029",
+        crust = "#152029"
       }
     }
   })

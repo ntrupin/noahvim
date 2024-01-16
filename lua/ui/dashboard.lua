@@ -5,28 +5,33 @@
 local M = {}
 
 local header = {
-  [[       _      _      _        ]],
-  [[     >(.)__ <(.)__ =(.)__     ]],
-  [[      (___/  (___/  (___/     ]],
-  [[    ------/\-----/\------/\   ]]
+  [[          _      _      _            ]],
+  [[        >(.)__ <(.)__ =(.)__         ]],
+  [[         (___/  (___/  (___/         ]],
+  [[      -------/\-----/\-----/\---     ]]
 }
 
 local logo = {
-  [[   _     _   _   /7     ()_    ]],
-  [[  / \/7,'o|,'o| / \/7/7/7/ \'\ ]],
-  [[ /_n_/ |_,'|_,7/n_/|,'///_nn_/ ]],
+  [[      _     _   _   /7     ()_       ]],
+  [[     / \/7,'o|,'o| / \/7/7/7/ \'\    ]],
+  [[    /_n_/ |_,'|_,7/n_/|,'///_nn_/    ]],
   "",
-  [[ ───────────────────────────── ]]
+  [[ ─────────────────────────────────── ]]
 }
 
 local options = {
-  { "󰥨 Find File        <leader>ff", cmd = "Telescope find_files" },
-  { "󰈙 Recent Files     <leader>fr", cmd = "Telescope oldfiles" },
-  { " Open Notepad     <leader>np", cmd = "Notepad" },
-  { " File Browser     <leader>fb", cmd = "Telescope file_browser" },
-  { " Credits                    ", cmd = "NoahvimCredits" },
-  { " Exit Noahvim      <leader>q", cmd = "quit" }
+  { "󰥨 Find File              <leader>ff", cmd = "Telescope find_files" },
+  { "󰈙 Recent Files           <leader>fr", cmd = "Telescope oldfiles" },
+  { " File Browser           <leader>fb", cmd = "Telescope file_browser" },
+  { " Exit Noahvim           <leader>q ", cmd = "quit" }
 }
+
+local lazy = {
+  [[  ⚡ Loaded %02d plugins in %.1fms   ]]
+}
+
+
+local lazy_stats = require("lazy").stats()
 
 local min_width = #logo[1]
 local empty_line = string.rep(" ", min_width)
@@ -36,7 +41,7 @@ table.insert(header, 1, empty_line)
 header[#header + 1] = empty_line
 logo[#logo + 1] = empty_line
 
-local min_height = 1 + #header + #logo + (#options * 2) + 1 + 1
+local min_height = 1 + #header + #logo + (#options * 2) + #lazy + 1 + 1
 
 local render = function()
   -- get dimensions
@@ -92,7 +97,13 @@ local render = function()
     table.insert(dashboard, add_padding(val[1]))
     table.insert(dashboard, empty_line)
   end
-  table.remove(dashboard, #dashboard)
+  -- table.remove(dashboard, #dashboard)
+
+  for _, val in ipairs(lazy) do
+    table.insert(dashboard, add_padding(
+      string.format(val, lazy_stats.loaded, lazy_stats.startuptime)
+    ))
+  end
 
   -- set dashboard
   local result = {}
@@ -125,9 +136,13 @@ local render = function()
     vim.api.nvim_buf_add_highlight(buf, -1, "NoahvimRedBold", i, 0, -1)
   end
 
+  -- lazy
+  for i = hdr_start_idx + #dashboard - 2, hdr_start_idx + #dashboard - 2 do
+    vim.api.nvim_buf_add_highlight(buf, -1, "NoahvimPurpleBold", i, 0, -1)
+  end
 
   -- set cursor to first char
-  local cursor_column_idx = (width > min_width) and (math.floor(width / 2) - 15) or 0
+  local cursor_column_idx = (width > min_width) and (math.floor(width / 2) - 18) or 0
   vim.api.nvim_win_set_cursor(0, { hdr_start_idx + #header + #logo, cursor_column_idx })
 
   -- button locations

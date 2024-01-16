@@ -107,6 +107,10 @@ do
     vim = {
       tabstop = 2,
       shiftwidth = 2
+    },
+    c = {
+      tabstop = 2,
+      shiftwidth = 2
     }
   }
 
