@@ -4,7 +4,7 @@
 local M = {}
 
 local servers = {
-  "bashls", "clangd", "lua_ls", "pyright", "texlab"
+  "bashls", "clangd", "lua_ls", "pyright", "texlab", "fortls"
 }
 
 M.setup = function()
