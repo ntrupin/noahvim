@@ -32,7 +32,7 @@ Statusline.build = function()
     " %#NoahvimGrey#",
 
     -- Spacer
-    "%#NoahvimDefaultBG#",
+    "%#NoahvimGrey#",
     "%=",
 
     -- LSP
