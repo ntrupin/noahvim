@@ -4,9 +4,9 @@ if not table.unpack then
 end
 
 -- load modules
+require("plugins")
 require("opts")
 require("keybinds")
-require("plugins")
 require("commands")
 
 -- setup highlights

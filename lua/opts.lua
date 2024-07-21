@@ -45,7 +45,7 @@ do
   }
 
   set_opts(unopinionated)
-end 
+end
 
 -- set "opinionated" options
 do
@@ -97,6 +97,22 @@ do
       shiftwidth = 2
     },
     javascript = {
+      tabstop = 2,
+      shiftwidth = 2
+    },
+    typescript = {
+      tabstop = 2,
+      shiftwidth = 2
+    },
+    typescriptreact = {
+      tabstop = 2,
+      shiftwidth = 2
+    },
+    html = {
+      tabstop = 2,
+      shiftwidth = 2
+    },
+    css = {
       tabstop = 2,
       shiftwidth = 2
     },
