@@ -11,7 +11,8 @@ M.noahvim_llm = function(model_name)
     url = "https://api.groq.com/openai/v1/chat/completions",
     model = model,
     api_key_name = "GROQ_API_KEY",
-    system_prompt = "You should replace the code that you are send, only following the comments. Do not talk at all. Only output valid code. Do not use any backticks around your code. Never output backticks like this ```. Any comment asking you for something should be removed after you satisfy it. Other comments should be ignored. Do not output backticks."
+    system_prompt = "You should replace the code that you are send, only following the comments. Do not talk at all. Only output valid code. Do not use any backticks around your code. Never output backticks like this ```. Any comment asking you for something should be removed after you satisfy it. Other comments should be ignored. Do not output backticks.",
+    replace = true
   }, llm.make_groq_request, llm.handle_groq_response)
 end
 
