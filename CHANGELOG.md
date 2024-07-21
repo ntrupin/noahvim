@@ -6,6 +6,7 @@ Generated with `git log <target>/<branch>..<branch> --grep="^chore: " --invert-g
 
 ### Version 2024.07.21
 
+- [893495d]: fix(statusline): make divider colorscheme agnostic
 - [dabcccd]: feat: add groq llm support
 
 ### Version 2023.09.14
