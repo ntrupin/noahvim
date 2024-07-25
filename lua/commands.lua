@@ -5,7 +5,7 @@ local M = {}
 
 -- llm
 M.noahvim_llm = function(model_name)
-  local model = model_name or "llama3-70b-8192"
+  local model = model_name or "llama-3.1-70b-versatile"
   local llm = require("util.llm")
   llm.invoke({
     url = "https://api.groq.com/openai/v1/chat/completions",
