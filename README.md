@@ -15,9 +15,16 @@ My Neovim configuration.
 
 ## Installation
 
-```bash
-git clone https://github.com/ntrupin/noahvim ~/.config/nvim
-```
+1. clone the respository into the nvim config dir
+    ```bash
+    git clone https://github.com/ntrupin/noahvim ~/.config/nvim
+    ```
+2. build the necessary c libs
+    ```bash
+    mkdir -p build
+    gcc -shared -o build/bit32.so -fPIC bit32.c
+    ```
+
 
 ## Features
 
