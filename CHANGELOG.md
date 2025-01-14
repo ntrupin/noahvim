@@ -6,6 +6,7 @@ Generated with `git log <target>/<branch>..<branch> --grep="^chore: " --invert-g
 
 ### Version 2024.07.21
 
+- [b455ee9]: feat(llm): llama 3.1
 - [0ebb78c]: fix(llm): replace text
 - [893495d]: fix(statusline): make divider colorscheme agnostic
 - [dabcccd]: feat: add groq llm support
