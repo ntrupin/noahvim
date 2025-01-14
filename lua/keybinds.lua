@@ -17,7 +17,7 @@ local keybinds = {
   -- split panes
   { "n", "<leader>|", "<CMD>vsplit<CR><C-w>l", "[|]: create a vertical split" },
   { "n", "<leader>-", "<CMD>split<CR><C-w>j", "[-]: create a horizontal split" },
-  { "n", "<leader>q", "<C-w>q", "[q]uit: close the selected window" },
+  -- { "n", "<leader>q", "<C-w>q", "[q]uit: close the selected window" },
   { "n", "<leader>h", "<C-w>h", "[h]: move to the window on the left" },
   { "n", "<leader>j", "<C-w>j", "[j]: move to the window below" },
   { "n", "<leader>k", "<C-w>k", "[k]: move to the window above" },
@@ -42,6 +42,8 @@ local keybinds = {
   { "n", "<leader>m", require("commands").noahvim_menu, "[m]enu: show menu" },
   { "n", "<leader>g", require("commands").git_menu, "[g]it menu: show git menu" },
   { "n", "<leader>z", require("commands").term_menu, "[z]sh menu: show term menu" },
+  { "n", "<leader>q", require("commands").noahvim_llm, "groq" },
+  { "v", "<leader>q", require("commands").noahvim_llm, "groq" },
   { "n", "<leader>np", require("ui.notepad").launch, "[n]ote[p]ad: launch notepad" },
 
   table.unpack(require("config.tree").keybinds),

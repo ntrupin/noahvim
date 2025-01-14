@@ -11,7 +11,7 @@ local plugins = {
     "sainnhe/everforest",
     config = require("config.colorschemes.everforest").setup
   },]]--
-  { 
+  {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,

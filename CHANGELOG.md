@@ -4,6 +4,12 @@
 
 Generated with `git log <target>/<branch>..<branch> --grep="^chore: " --invert-grep --pretty=format:"- [%h]: %s"`
 
+### Version 2024.07.21
+
+- [0ebb78c]: fix(llm): replace text
+- [893495d]: fix(statusline): make divider colorscheme agnostic
+- [dabcccd]: feat: add groq llm support
+
 ### Version 2023.09.14
 
 > This version focuses on refining custom components and implementing some functionality in C.
