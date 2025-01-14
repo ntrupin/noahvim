@@ -22,7 +22,7 @@ My Neovim configuration.
 2. build the necessary c libs
     ```bash
     mkdir -p build
-    gcc -shared -o build/bit32.so -fPIC bit32.c
+    gcc -shared -o build/bit32.so -fPIC c/bit32.c
     ```
 
 
