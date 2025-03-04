@@ -42,8 +42,8 @@ local keybinds = {
   { "n", "<leader>m", require("commands").noahvim_menu, "[m]enu: show menu" },
   { "n", "<leader>g", require("commands").git_menu, "[g]it menu: show git menu" },
   { "n", "<leader>z", require("commands").term_menu, "[z]sh menu: show term menu" },
-  { "n", "<leader>q", require("commands").noahvim_llm, "groq" },
-  { "v", "<leader>q", require("commands").noahvim_llm, "groq" },
+  -- { "n", "<leader>q", require("commands").noahvim_llm, "groq" },
+  -- { "v", "<leader>q", require("commands").noahvim_llm, "groq" },
   { "n", "<leader>np", require("ui.notepad").launch, "[n]ote[p]ad: launch notepad" },
 
   table.unpack(require("config.tree").keybinds),

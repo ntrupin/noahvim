@@ -25,7 +25,6 @@ My Neovim configuration.
     gcc -shared -o build/bit32.so -fPIC c/bit32.c
     ```
 
-
 ## Features
 
 - Improved yank/paste functionality with Telescope

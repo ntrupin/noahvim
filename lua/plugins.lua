@@ -39,6 +39,9 @@ local plugins = {
     config = require("config.lualine").setup
   },]]--
   {
+    "github/copilot.vim"
+  },
+  {
     "rcarriga/nvim-notify", -- notifications
     config = require("config.notify").setup
   },
